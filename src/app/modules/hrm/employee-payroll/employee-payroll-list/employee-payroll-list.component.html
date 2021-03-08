@@ -1,0 +1,47 @@
+<div class="table-operations">
+    <button nz-button >Sort age</button>
+    <button nz-button >Clear filters</button>
+    <button nz-button >Clear filters and sorters</button>
+  </div>
+  <nz-table #filterTable  nzTableLayout="fixed">
+    <thead>
+    <tr>
+      <th>Month</th>
+      <th>Year</th>
+      <th>TotalPresent</th>
+      <th>TotalAbsent</th>
+      <th>Deduction</th>
+      <th>FestivalAdvance</th>
+      <th>LossOfPay</th>
+      <th>TDS</th>
+      <th>BasicSalary</th>
+      <th>SalaryPerDay</th>
+      <th>Deductions</th>
+      <th>NetPay</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of _payList">
+      <td>{{ data.month }}</td>
+      <td>{{ data.year }}</td>
+      <td>{{ data.totalPresent }}</td>
+      <td>{{ data.totalAbsent  }}</td>
+      <td>{{ data.deduction }}</td>
+      <td>{{ data.festivalAdvance }}</td>
+      <td>{{ data.lossOfPay }}</td>
+      <td>{{ data.tds  }}</td>
+      <td>{{ data.basicSalary }}</td>
+      <td>{{ data.salaryPerDay }}</td>
+      <td>{{ data.deductions }}</td>
+      <td>{{ data.netPay  }}</td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="primary" [routerLink]="['update/',data.payrollId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deletePayroll(data.payrollId)"><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+        </nz-button-group>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>

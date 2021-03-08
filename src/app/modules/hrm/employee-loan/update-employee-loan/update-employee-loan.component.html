@@ -1,0 +1,68 @@
+<nz-page-header-title>Loan</nz-page-header-title>
+<form nz-form [formGroup]="loanForm" (ngSubmit) = "onUpdate()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Employee Id</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="EmployeeId" id="EmployeeId" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TypeOfLoan" nzRequired>Type Of Loan</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="TypeOfLoan" id="TypeOfLoan" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="DateOfApplication" nzRequired>Date Of Application</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="DateOfApplication" id="DateOfApplication" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ProposedAmount" nzRequired>Proposed Amount</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="ProposedAmount" id="ProposedAmount"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="NoOfInstRecovery" nzRequired>Installment Recovery No</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="NoOfInstRecovery" id="NoOfInstRecovery"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="StartDateOfRecovery" nzRequired>Start Date Of Recovery</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="StartDateOfRecovery" id="StartDateOfRecovery"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EndDateOfRecovery" nzRequired>End Date Of Recovery</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="EndDateOfRecovery" id="EndDateOfRecovery"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="NoOfDays" nzRequired>No Of Days</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="NoOfDays" id="NoOfDays"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="InterestRate" nzRequired>Interest Rate</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="InterestRate" id="InterestRate"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="InterestAmount" nzRequired>Interest Amount</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="InterestAmount" id="InterestAmount"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary">Save</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

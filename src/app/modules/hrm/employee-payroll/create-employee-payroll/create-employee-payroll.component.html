@@ -1,0 +1,200 @@
+<nz-page-header-title>Payroll</nz-page-header-title>
+  <form nz-form [nzLayout]="'inline'" [formGroup]="payForm" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Id</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="EmployeeId" nz-input type="text" placeholder="Employee Id" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Month" nzRequired>Month</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="Month" nz-input placeholder="Month" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Year" nzRequired>Year</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="Year" nz-input type="text" placeholder="Year" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TotalPresent" nzRequired>Present</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="TotalPresent" nz-input placeholder="TotalPresent" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TotalAbsent" nzRequired>Absent</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="TotalAbsent" nz-input type="text" placeholder="TotalAbsent" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeaveDays" nzRequired>Leave</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="LeaveDays" nz-input placeholder="LeaveDays" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Deduction" nzRequired>Deduction</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="Deduction" nz-input type="text" placeholder="Deduction" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeaveStatus" nzRequired>Status</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="LeaveStatus" nz-input placeholder="LeaveStatus" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="FestivalAdvance" nzRequired>Festival</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="FestivalAdvance" nz-input type="text" placeholder="FestivalAdvance" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="HousingLoan" nzRequired>Housing</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="HousingLoan" nz-input placeholder="HousingLoan" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="VehicleLoan" nzRequired>Vehicle</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="VehicleLoan" nz-input type="text" placeholder="VehicleLoan" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="OtherLoan" nzRequired>Other</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="OtherLoan" nz-input placeholder="OtherLoan" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LossOfPay" nzRequired>Loss</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="LossOfPay" nz-input type="text" placeholder="LossOfPay" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TDS" nzRequired>TDS</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="TDS" nz-input placeholder="TDS" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ProfessionalFees" nzRequired>Professional</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="ProfessionalFees" nz-input type="text" placeholder="ProfessionalFees" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="OtherDeductions" nzRequired>Deductions</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="OtherDeductions" nz-input placeholder="OtherDeductions" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TotalEarnings" nzRequired>Earnings</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="TotalEarnings" nz-input type="text" placeholder="TotalEarnings" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="OtherPay" nzRequired>Pay</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="OtherPay" nz-input placeholder="OtherPay" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="BasicSalary" nzRequired>Salary</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="BasicSalary" nz-input type="text" placeholder="BasicSalary" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="SalaryPerDay" nzRequired>PerDay</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="SalaryPerDay" nz-input placeholder="SalaryPerDay" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Pay" nzRequired>Pay</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="Pay" nz-input type="text" placeholder="Pay" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Earnings" nzRequired>Earnings</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="Earnings" nz-input placeholder="Earnings" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Deductions" nzRequired>Deductions</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="Deductions" nz-input type="text" placeholder="Deductions" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="NetPay" nzRequired>Net Pay</nz-form-label>
+      <nz-form-control >
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="NetPay" nz-input placeholder="NetPay" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary">Save</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

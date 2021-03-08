@@ -1,0 +1,56 @@
+<nz-page-header-title>Employee</nz-page-header-title>
+<form nz-form [formGroup]="employeeForm" (ngSubmit) = "onSubmit()" >
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="FirstName" nzRequired>First Name</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="FirstName" id="FirstName" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LastName" nzRequired>Last Name</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="LastName" id="LastName" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="BirthDate" nzRequired>Birth Date</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <nz-date-picker  type="text" formControlName="BirthDate"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Age" nzRequired>Age</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="Age" id="Age"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Sex" nzRequired>Sex</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="Sex" id="Sex"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Address" nzRequired>Address</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="Address" id="Address"/>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="JoinDate" nzRequired>Join Date</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <nz-date-picker  type="text" formControlName="JoinDate"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeaveDate" nzRequired>Leave Date</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <nz-date-picker type="text" formControlName="LeaveDate"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary">Save</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

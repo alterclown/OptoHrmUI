@@ -1,0 +1,40 @@
+<!-- <p>employee-attendance-list works!</p> -->
+<div class="table-operations">
+    <button nz-button >Sort age</button>
+    <button nz-button >Clear filters</button>
+    <button nz-button >Clear filters and sorters</button>
+  </div>
+  <nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+    <tr>
+      <th>AttendanceId</th>
+      <th>EmployeeId</th>
+      <th>TimeIn</th>
+      <th>TimeOut</th>
+      <th>Count</th>
+      <th>Remarks</th>
+      <th>CompanyId</th>
+      <th>UserId</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of _attendanceList">
+      <td>{{ data.employeeAttendanceId }}</td>
+      <td>{{ data.employeeId }}</td>
+      <td>{{ data.timeIn }}</td>
+      <td>{{ data.timeOut  }}</td>
+      <td>{{ data.count }}</td>
+      <td>{{ data.remarks }}</td>
+      <td>{{ data.companyId }}</td>
+      <td>{{ data.userId  }}</td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="primary"[routerLink]="['update/',data.employeeAttendanceId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteAttendance(data.employeeAttendanceId)"><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+        </nz-button-group>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>

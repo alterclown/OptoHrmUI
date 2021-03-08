@@ -1,0 +1,38 @@
+<div class="table-operations">
+    <button nz-button >Sort age</button>
+    <button nz-button >Clear filters</button>
+    <button nz-button >Clear filters and sorters</button>
+  </div>
+  <nz-table #filterTable  nzTableLayout="fixed">
+    <thead>
+    <tr>
+      <th>ProjectHandleId</th>
+      <th>EmployeeId</th>
+      <th>ProjectName</th>
+      <th>DateStarted</th>
+      <th>DateEnded</th>
+      <th>Status</th>
+      <th>CompanyId</th>
+      <th>UserId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of _projectList">
+      <td>{{ data.projectHandleId }}</td>
+      <td>{{ data.employeeId }}</td>
+      <td>{{ data.projectName }}</td>
+      <td>{{ data.dateStarted  }}</td>
+      <td>{{ data.dateEnded }}</td>
+      <td>{{ data.status }}</td>
+      <td>{{ data.companyId }}</td>
+      <td>{{ data.userId  }}</td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="primary" [routerLink]="['update/',data.projectHandleId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteProject(data.projectHandleId)" ><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+        </nz-button-group>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>

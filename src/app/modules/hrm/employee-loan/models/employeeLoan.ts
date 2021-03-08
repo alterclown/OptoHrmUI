@@ -1,0 +1,15 @@
+export interface EmployeeLoan{
+    LoanId:number,
+    EmployeeId:number,
+    TypeOfLoan:string,
+    DateOfApplication:string,
+    ProposedAmount:string,
+    NoOfInstRecovery :string,
+    StartDateOfRecovery:string,
+    EndDateOfRecovery:string,
+    NoOfDays:string,
+    InterestRate:string,
+    InterestAmount:string,
+    CompanyId:number,
+    UserId:number,
+}
