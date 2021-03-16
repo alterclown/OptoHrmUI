@@ -17,4 +17,8 @@ export abstract class Authentication {
         let user = JSON.parse(localStorage.getItem('user'));
         return user
     }
+
+    public static logOutFromLocalStorage(){
+        return localStorage.removeItem('user');
+    }
 }

@@ -1,55 +1,25 @@
-<!-- <form nz-form  class="login-form" [formGroup]="userForm" (ngSubmit) = "onSubmit()">
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your username!">
-        <nz-input-group nzPrefixIcon="user">
-          <input type="text" nz-input formControlName="Email" placeholder="Username" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Password!">
-        <nz-input-group nzPrefixIcon="lock">
-          <input type="password" nz-input formControlName="Password" placeholder="Password" />
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <div nz-row class="login-form-margin">
-      <div nz-col [nzSpan]="12">
-        <label nz-checkbox formControlName="remember">
-          <span>Remember me</span>
-        </label>
-      </div>
-      <div nz-col [nzSpan]="12">
-        <a class="login-form-forgot">Forgot password</a>
-      </div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign In </h2>
+    <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../assets/logo1.PNG" />
     </div>
-    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-    Or <a> register now! </a>
-  </form> -->
-  
-  <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      <h2 class="active"> Sign In </h2>
-      <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
-  
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <img src="../assets/logo1.PNG"  />
-      </div>
-  
-      <!-- Login Form -->
-      <form [formGroup]="userForm" (ngSubmit) = "onSubmit()">
-        <input type="text" id="login" class="fadeIn second" formControlName="Email"  placeholder="Username" >
-        <input type="text" id="password" class="fadeIn third" formControlName="Password" placeholder="Password" >
-        <input type="submit" class="fadeIn fourth"  value="Log In" >
-      </form>
-  
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" >Forgot Password?</a>
-      </div>
-  
+
+    <!-- Login Form -->
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <input type="text" id="login" class="fadeIn second" formControlName="Email" placeholder="Username">
+      <input type="text" id="password" class="fadeIn third" formControlName="Password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover">Forgot Password?</a>
     </div>
+
   </div>
-  <router-outlet></router-outlet>
+</div>
