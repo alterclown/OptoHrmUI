@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
   ngOnInit() { }
   logOut() {
     Authentication.logOutFromLocalStorage();
-    this._router.navigate(['login']);
+    this._router.navigate(['']);
   }
 }
