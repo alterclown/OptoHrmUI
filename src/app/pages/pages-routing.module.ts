@@ -5,7 +5,7 @@ import { HrmLoginComponent } from './hrm-login/hrm-login.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, pathMatch: 'full'},
-  {path: '', component: HrmLoginComponent,children: [{path: '', component: HrmLoginComponent}]},
+  {path: '', component: HrmLoginComponent, pathMatch: 'full'},
 ];
 
 @NgModule({

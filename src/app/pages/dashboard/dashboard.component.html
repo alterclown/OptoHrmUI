@@ -1,1 +1,100 @@
-<h1>Dashboard Works</h1>
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar"
+              nzCollapsible
+              nzWidth="250px"
+              nzBreakpoint="md"
+              [(nzCollapsed)]="isCollapsed"
+              [nzTrigger]="null">
+              
+      <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+          <h1>HRM</h1> 
+        </a>
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+  
+        <li nz-submenu nzTitle="Settings" nzIcon="dashboard">
+          <ul>
+  
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="settings/company">Company</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="settings/department">Department</a>
+            </li>
+  
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="settings/designation">Designation</a>
+            </li>
+          </ul>
+        </li>
+  
+  
+  
+        <li nz-submenu nzTitle="HRM" nzIcon="dashboard">
+          <ul>
+  
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee">Employee</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-attendance">Employee Attendance</a>
+            </li>
+  
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-salary">Employee Salary</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-project">Employee Project</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-leave">Employee Leave</a>
+            </li>
+            <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-training">Employee Training</a>
+            </li>
+          </ul>
+        </li>
+  
+        <li nz-submenu nzOpen nzTitle="Payroll" nzIcon="dashboard">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+               <a routerLink="hrm/employee-loan">Employee Loan</a>
+             </li>
+             <li nz-menu-item nzMatchRouter>
+               <a routerLink="hrm/employee-payroll">Employee Payroll</a>
+             </li>
+  
+             <li nz-menu-item nzMatchRouter>
+              <a routerLink="hrm/employee-tax">Employee Tax</a>
+            </li>
+          </ul>
+        </li>
+  
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <i class="trigger"
+                 nz-icon
+                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></i>
+          </span>
+          <span class="header-trigger" (click)="logOut()">
+              <i class="trigger"
+                 nz-icon
+                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></i>
+          </span>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="inner-content" >
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
