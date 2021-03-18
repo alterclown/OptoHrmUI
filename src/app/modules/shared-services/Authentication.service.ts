@@ -18,10 +18,10 @@ export abstract class Authentication {
         return user
     }
 
-    public static getUserEmailFromLocalStorage(){
-        let user = JSON.parse(localStorage.getItem('user'));
-        return user.email
-    }
+    // public static getUserEmailFromLocalStorage(){
+    //     let user = JSON.parse(localStorage.getItem('user'));
+    //     return user.email
+    // }
 
     public static logOutFromLocalStorage(){
         return localStorage.removeItem('user');
