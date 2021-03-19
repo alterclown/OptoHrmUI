@@ -9,10 +9,10 @@ import { Authentication } from './modules/shared-services/Authentication.service
 })
 export class AppComponent implements OnInit {
   isCollapsed = true;
-
+  isUser = false;
   constructor(private _router: Router) { }
   ngOnInit() {
-    
+    this.isUser = Authentication.isAuthenticated();    
    }
   logOut() {
     Authentication.logOutFromLocalStorage();

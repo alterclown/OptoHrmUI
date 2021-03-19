@@ -1,5 +1,10 @@
 export abstract class Authentication {         
     
+    public static isAuthenticated() {
+        let user = JSON.parse(localStorage.getItem("user"));
+        return !!user;
+    }
+
     public static getUserIdFromLocalStorage(){
         let user = JSON.parse(localStorage.getItem('user'));
         return user.userId
