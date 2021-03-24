@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() { }
   logOut() {
     Authentication.logOutFromLocalStorage();
-    this._router.navigate(['']);
+    this._router.navigate(['login']);
   }
 
 }

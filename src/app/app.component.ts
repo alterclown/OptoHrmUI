@@ -12,10 +12,9 @@ export class AppComponent implements OnInit {
   isUser = false;
   constructor(private _router: Router) { }
   ngOnInit() {
-    this.isUser = Authentication.isAuthenticated();    
    }
   logOut() {
     Authentication.logOutFromLocalStorage();
-    this._router.navigate(['']);
+    this._router.navigate(['login']);
   }
 }
