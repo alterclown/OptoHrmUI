@@ -11,8 +11,10 @@
 
     <!-- Login Form -->
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <input type="text" id="login" class="fadeIn second" formControlName="Email" placeholder="Username">
-      <input type="text" id="password" class="fadeIn third" formControlName="Password" placeholder="Password">
+      <input type="text" id="login" class="fadeIn second" formControlName="Email" placeholder="Username"
+        [ngClass]="{ 'is-invalid': submitted && userForm.controls.Email.errors }">
+      <input type="text" id="password" class="fadeIn third" formControlName="Password" placeholder="Password"
+        [ngClass]="{ 'is-invalid': submitted && userForm.controls.Password.errors }">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
