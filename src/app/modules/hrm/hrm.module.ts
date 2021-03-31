@@ -47,6 +47,32 @@ import { EmployeeEducationComponent } from './employee-education/employee-educat
 import { EmployeeEducationListComponent } from './employee-education/employee-education-list/employee-education-list.component';
 import { CreateEmployeeEducationComponent } from './employee-education/create-employee-education/create-employee-education.component';
 import { UpdateEmployeeEducationComponent } from './employee-education/update-employee-education/update-employee-education.component';
+import { EmployeeCertificationComponent } from './employee-certification/employee-certification.component';
+import { EmployeeCertificationListComponent } from './employee-certification/employee-certification-list/employee-certification-list.component';
+import { CreateEmployeeCertificationComponent } from './employee-certification/create-employee-certification/create-employee-certification.component';
+import { UpdateEmployeeCertificationComponent } from './employee-certification/update-employee-certification/update-employee-certification.component';
+import { EmployeeLanguageComponent } from './employee-language/employee-language.component';
+import { EmployeeLanguageListComponent } from './employee-language/employee-language-list/employee-language-list.component';
+import { CreateEmployeeLanguageComponent } from './employee-language/create-employee-language/create-employee-language.component';
+import { UpdateEmployeeLanguageComponent } from './employee-language/update-employee-language/update-employee-language.component';
+import { EmployeeDependentComponent } from './employee-dependent/employee-dependent.component';
+import { EmployeeDependentListComponent } from './employee-dependent/employee-dependent-list/employee-dependent-list.component';
+import { CreateEmployeeDependentComponent } from './employee-dependent/create-employee-dependent/create-employee-dependent.component';
+import { UpdateEmployeeDependentComponent } from './employee-dependent/update-employee-dependent/update-employee-dependent.component';
+import { EmployeeEmergencyContactComponent } from './employee-emergency-contact/employee-emergency-contact.component';
+import { EmployeeEmergencyContactListComponent } from './employee-emergency-contact/employee-emergency-contact-list/employee-emergency-contact-list.component';
+import { CreateEmployeeEmergencyContactComponent } from './employee-emergency-contact/create-employee-emergency-contact/create-employee-emergency-contact.component';
+import { UpdateEmployeeEmergencyContactComponent } from './employee-emergency-contact/update-employee-emergency-contact/update-employee-emergency-contact.component';
+import { EmployeeDeactivateComponent } from './employee-deactivate/employee-deactivate.component';
+import { EmployeeDeactivateListComponent } from './employee-deactivate/employee-deactivate-list/employee-deactivate-list.component';
+import { CreateEmployeeDeactivateComponent } from './employee-deactivate/create-employee-deactivate/create-employee-deactivate.component';
+import { UpdateEmployeeDeactivateComponent } from './employee-deactivate/update-employee-deactivate/update-employee-deactivate.component';
+import { EmployeeArchivedComponent } from './employee-archived/employee-archived.component';
+import { EmployeeArchivedListComponent } from './employee-archived/employee-archived-list/employee-archived-list.component';
+import { CreateEmployeeArchivedComponent } from './employee-archived/create-employee-archived/create-employee-archived.component';
+import { UpdateEmployeeArchivedComponent } from './employee-archived/update-employee-archived/update-employee-archived.component';
+import { MonitorAttendanceComponent } from './monitor-attendance/monitor-attendance.component';
+import { MonitorAttendanceListComponent } from './monitor-attendance/monitor-attendance-list/monitor-attendance-list.component';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -92,7 +118,33 @@ import { UpdateEmployeeEducationComponent } from './employee-education/update-em
     EmployeeEducationComponent,
     EmployeeEducationListComponent,
     CreateEmployeeEducationComponent,
-    UpdateEmployeeEducationComponent
+    UpdateEmployeeEducationComponent,
+    EmployeeCertificationComponent,
+    EmployeeCertificationListComponent,
+    CreateEmployeeCertificationComponent,
+    UpdateEmployeeCertificationComponent,
+    EmployeeLanguageComponent,
+    EmployeeLanguageListComponent,
+    CreateEmployeeLanguageComponent,
+    UpdateEmployeeLanguageComponent,
+    EmployeeDependentComponent,
+    EmployeeDependentListComponent,
+    CreateEmployeeDependentComponent,
+    UpdateEmployeeDependentComponent,
+    EmployeeEmergencyContactComponent,
+    EmployeeEmergencyContactListComponent,
+    CreateEmployeeEmergencyContactComponent,
+    UpdateEmployeeEmergencyContactComponent,
+    EmployeeDeactivateComponent,
+    EmployeeDeactivateListComponent,
+    CreateEmployeeDeactivateComponent,
+    UpdateEmployeeDeactivateComponent,
+    EmployeeArchivedComponent,
+    EmployeeArchivedListComponent,
+    CreateEmployeeArchivedComponent,
+    UpdateEmployeeArchivedComponent,
+    MonitorAttendanceComponent,
+    MonitorAttendanceListComponent
   ],
   imports: [
     CommonModule,
