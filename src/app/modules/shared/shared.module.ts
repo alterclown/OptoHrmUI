@@ -42,6 +42,18 @@ import { CertificationComponent } from './certification/certification.component'
 import { CertificationListComponent } from './certification/certification-list/certification-list.component';
 import { CreateCertificationComponent } from './certification/create-certification/create-certification.component';
 import { UpdateCertificationComponent } from './certification/update-certification/update-certification.component';
+import { LanguageComponent } from './language/language.component';
+import { LanguageListComponent } from './language/language-list/language-list.component';
+import { CreateLanguageComponent } from './language/create-language/create-language.component';
+import { UpdateLanguageComponent } from './language/update-language/update-language.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
+import { CreateProjectComponent } from './project/create-project/create-project.component';
+import { UpdateProjectComponent } from './project/update-project/update-project.component';
+import { ClientComponent } from './client/client.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
+import { UpdateClientComponent } from './client/update-client/update-client.component';
 
 
 @NgModule({
@@ -81,6 +93,18 @@ import { UpdateCertificationComponent } from './certification/update-certificati
     CertificationListComponent,
     CreateCertificationComponent,
     UpdateCertificationComponent,
+    LanguageComponent,
+    LanguageListComponent,
+    CreateLanguageComponent,
+    UpdateLanguageComponent,
+    ProjectComponent,
+    ProjectListComponent,
+    CreateProjectComponent,
+    UpdateProjectComponent,
+    ClientComponent,
+    ClientListComponent,
+    CreateClientComponent,
+    UpdateClientComponent,
   ],
   imports: [
     CommonModule,
