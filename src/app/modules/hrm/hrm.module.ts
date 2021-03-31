@@ -39,6 +39,14 @@ import { UpdateEmployeeTrainingComponent } from './employee-training/update-empl
 import { UpdateEmployeeTaxComponent } from './employee-tax/update-employee-tax/update-employee-tax.component';
 import { UpdateEmployeePayrollComponent } from './employee-payroll/update-employee-payroll/update-employee-payroll.component';
 import { UpdateEmployeeLoanComponent } from './employee-loan/update-employee-loan/update-employee-loan.component';
+import { EmployeeSkillsComponent } from './employee-skills/employee-skills.component';
+import { EmployeeSkillsListComponent } from './employee-skills/employee-skills-list/employee-skills-list.component';
+import { CreateEmployeeSkillsComponent } from './employee-skills/create-employee-skills/create-employee-skills.component';
+import { UpdateEmployeeSkillsComponent } from './employee-skills/update-employee-skills/update-employee-skills.component';
+import { EmployeeEducationComponent } from './employee-education/employee-education.component';
+import { EmployeeEducationListComponent } from './employee-education/employee-education-list/employee-education-list.component';
+import { CreateEmployeeEducationComponent } from './employee-education/create-employee-education/create-employee-education.component';
+import { UpdateEmployeeEducationComponent } from './employee-education/update-employee-education/update-employee-education.component';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -76,7 +84,15 @@ import { UpdateEmployeeLoanComponent } from './employee-loan/update-employee-loa
     UpdateEmployeeTrainingComponent,
     UpdateEmployeeTaxComponent,
     UpdateEmployeePayrollComponent,
-    UpdateEmployeeLoanComponent
+    UpdateEmployeeLoanComponent,
+    EmployeeSkillsComponent,
+    EmployeeSkillsListComponent,
+    CreateEmployeeSkillsComponent,
+    UpdateEmployeeSkillsComponent,
+    EmployeeEducationComponent,
+    EmployeeEducationListComponent,
+    CreateEmployeeEducationComponent,
+    UpdateEmployeeEducationComponent
   ],
   imports: [
     CommonModule,
