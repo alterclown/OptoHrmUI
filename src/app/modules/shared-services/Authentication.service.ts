@@ -36,4 +36,9 @@ export abstract class Authentication {
         let user = JSON.parse(localStorage.getItem("user"));
         return !user;
     }
+
+    public static getUserNameLocalStorage() {
+        let user = JSON.parse(localStorage.getItem('user'));
+        return user.firstName
+    }
 }

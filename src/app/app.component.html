@@ -1,43 +1,33 @@
-<nz-layout class="app-layout" *ngIf="isAuthenticated">
-    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="250px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
-        [nzTrigger]="null">
-
+<nz-layout *ngIf="isAuthenticated">
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
         <div class="sidebar-logo">
-            <a href="https://ng.ant.design/" target="_blank">
+            <a target="_blank">
                 <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
                 <h1>HRM</h1>
             </a>
         </div>
-        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-
-            <li nz-submenu nzTitle="Settings" nzIcon="dashboard">
+        <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+            <li nz-submenu nzTitle="Settings" nzIcon="transaction" nzTheme="outline">
                 <ul>
-
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="settings/company">Company</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="settings/department">Department</a>
                     </li>
-
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="settings/designation">Designation</a>
                     </li>
                 </ul>
             </li>
-
-
-
-            <li nz-submenu nzTitle="HRM" nzIcon="dashboard">
+            <li nz-submenu nzTitle="HRM" nzIcon="appstore" nzTheme="outline">
                 <ul>
-
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee">Employee</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee-attendance">Employee Attendance</a>
                     </li>
-
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee-salary">Employee Salary</a>
                     </li>
@@ -52,8 +42,7 @@
                     </li>
                 </ul>
             </li>
-
-            <li nz-submenu nzOpen nzTitle="Payroll" nzIcon="dashboard">
+            <li nz-submenu nzOpen nzTitle="Payroll" nzIcon="ungroup" nzTheme="outline">
                 <ul>
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee-loan">Employee Loan</a>
@@ -61,23 +50,28 @@
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee-payroll">Employee Payroll</a>
                     </li>
-
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="hrm/employee-tax">Employee Tax</a>
                     </li>
                 </ul>
             </li>
-
         </ul>
     </nz-sider>
     <nz-layout>
         <nz-header>
-            <div class="app-header">
-                <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-                    <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                (click)="isCollapsed = !isCollapsed"></i>
+            <div class="user-area">
+                <nz-badge [nzCount]="5" style="margin-right: 24px;">
+                    <nz-avatar class="head-example" nzIcon="user"
+                        nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                    </nz-avatar>
+                </nz-badge>
+                <span>
+                    <nz-tag [nzColor]="'#87d068'">{{userName}}</nz-tag>
                 </span>
                 <span class="header-trigger" (click)="logOut()">
-                    <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+                    <i nz-icon nzType="logout" nzTheme="outline"></i>
                 </span>
             </div>
         </nz-header>
@@ -86,6 +80,21 @@
                 <router-outlet></router-outlet>
             </div>
         </nz-content>
+        <nz-drawer [nzClosable]="true" nzPlacement="right" nzTitle="User Notifications">
+            <nz-list [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+                <ng-template #item let-item>
+                    <nz-list-item>
+                        <nz-list-item-meta [nzTitle]="nzTitle"
+                            nzAvatar="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                            nzDescription="Ant Design, a design language for background applications">
+                            <ng-template #nzTitle>
+                                <a href="https://ng.ant.design"></a>
+                            </ng-template>
+                        </nz-list-item-meta>
+                    </nz-list-item>
+                </ng-template>
+            </nz-list>
+        </nz-drawer>
     </nz-layout>
 </nz-layout>
 <router-outlet *ngIf="!isAuthenticated"></router-outlet>
