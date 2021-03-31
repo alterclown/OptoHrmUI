@@ -19,6 +19,29 @@ import { CreateDesignationComponent } from './designation/create-designation/cre
 import { DesignationListComponent } from './designation/designation-list/designation-list.component';
 import { UpdateDepartmentComponent } from './department/update-department/update-department.component';
 import { UpdateDesignationComponent } from './designation/update-designation/update-designation.component';
+import { JobTitleComponent } from './job-title/job-title.component';
+import { CreateJobTitleComponent } from './job-title/create-job-title/create-job-title.component';
+import { UpdateJobTitleComponent } from './job-title/update-job-title/update-job-title.component';
+import { JobTitleListComponent } from './job-title/job-title-list/job-title-list.component';
+import { PaygradeComponent } from './paygrade/paygrade.component';
+import { CreatePaygradeComponent } from './paygrade/create-paygrade/create-paygrade.component';
+import { UpdatePaygradeComponent } from './paygrade/update-paygrade/update-paygrade.component';
+import { EmploymentstatusComponent } from './employmentstatus/employmentstatus.component';
+import { EmploymentstatusListComponent } from './employmentstatus/employmentstatus-list/employmentstatus-list.component';
+import { CreateEmploymentStatusComponent } from './employmentstatus/create-employment-status/create-employment-status.component';
+import { UpdateEmploymentStatusComponent } from './employmentstatus/update-employment-status/update-employment-status.component';
+import { SkillsComponent } from './skills/skills.component';
+import { SkillListComponent } from './skills/skill-list/skill-list.component';
+import { CreateSkillComponent } from './skills/create-skill/create-skill.component';
+import { UpdateSkillComponent } from './skills/update-skill/update-skill.component';
+import { EducationComponent } from './education/education.component';
+import { EducationListComponent } from './education/education-list/education-list.component';
+import { CreateEducationComponent } from './education/create-education/create-education.component';
+import { UpdateEducationComponent } from './education/update-education/update-education.component';
+import { CertificationComponent } from './certification/certification.component';
+import { CertificationListComponent } from './certification/certification-list/certification-list.component';
+import { CreateCertificationComponent } from './certification/create-certification/create-certification.component';
+import { UpdateCertificationComponent } from './certification/update-certification/update-certification.component';
 
 
 @NgModule({
@@ -35,6 +58,29 @@ import { UpdateDesignationComponent } from './designation/update-designation/upd
     DesignationListComponent,
     UpdateDepartmentComponent,
     UpdateDesignationComponent,
+    JobTitleComponent,
+    CreateJobTitleComponent,
+    UpdateJobTitleComponent,
+    JobTitleListComponent,
+    PaygradeComponent,
+    CreatePaygradeComponent,
+    UpdatePaygradeComponent,
+    EmploymentstatusComponent,
+    EmploymentstatusListComponent,
+    CreateEmploymentStatusComponent,
+    UpdateEmploymentStatusComponent,
+    SkillsComponent,
+    SkillListComponent,
+    CreateSkillComponent,
+    UpdateSkillComponent,
+    EducationComponent,
+    EducationListComponent,
+    CreateEducationComponent,
+    UpdateEducationComponent,
+    CertificationComponent,
+    CertificationListComponent,
+    CreateCertificationComponent,
+    UpdateCertificationComponent,
   ],
   imports: [
     CommonModule,
