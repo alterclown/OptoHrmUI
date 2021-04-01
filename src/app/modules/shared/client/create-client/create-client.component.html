@@ -1,1 +1,68 @@
-<p>create-client works!</p>
+<nz-page-header-title>Client</nz-page-header-title>
+<form nz-form [formGroup]="clientForm" >
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ClientId" nzRequired>Client Id</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="ClientId" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ClientName" nzRequired>ClientName</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="ClientName" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Details" nzRequired>Details</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <nz-date-picker  type="text" formControlName="Details"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Address" nzRequired>Address</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="Address" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ContactNumber" nzRequired>ContactNumber</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="ContactNumber" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ContactEmail" nzRequired>ContactEmail</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="ContactEmail" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyUrl" nzRequired>CompanyUrl</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="CompanyUrl" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Status" nzRequired>Status</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" >
+        <input nz-input type="text" formControlName="Status" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="FirstContactDate" nzRequired>FirstContactDate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" >
+          <nz-date-picker type="text" formControlName="FirstContactDate"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyId" nzRequired>CompanyId</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" >
+          <nz-date-picker type="text" formControlName="CompanyId"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary">Save</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

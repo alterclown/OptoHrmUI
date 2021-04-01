@@ -12,6 +12,9 @@ import { UpdateDesignationComponent } from './designation/update-designation/upd
 import { CreateCertificationComponent } from './certification/create-certification/create-certification.component';
 import { CertificationComponent } from './certification/certification.component';
 import { UpdateCertificationComponent } from './certification/update-certification/update-certification.component';
+import { ClientComponent } from './client/client.component';
+import { CreateClientComponent } from './client/create-client/create-client.component';
+import { UpdateClientComponent } from './client/update-client/update-client.component';
 
 const routes: Routes = [
   {path: 'company', component: CompanyComponent, pathMatch: 'full'},
@@ -26,6 +29,9 @@ const routes: Routes = [
   {path: 'certification', component: CertificationComponent, pathMatch: 'full'},
   {path: 'certification/create', component: CreateCertificationComponent, pathMatch: 'full'},
   {path: 'certification/update/:id', component: UpdateCertificationComponent, pathMatch: 'full'},
+  {path: 'client', component: ClientComponent, pathMatch: 'full'},
+  {path: 'client/create', component: CreateClientComponent, pathMatch: 'full'},
+  {path: 'client/update/:id', component: UpdateClientComponent, pathMatch: 'full'},
 ];
 
 @NgModule({
