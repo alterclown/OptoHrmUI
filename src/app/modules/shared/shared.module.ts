@@ -54,6 +54,30 @@ import { ClientComponent } from './client/client.component';
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { CreateClientComponent } from './client/create-client/create-client.component';
 import { UpdateClientComponent } from './client/update-client/update-client.component';
+import { LeaveTypeComponent } from './leave-type/leave-type.component';
+import { CreateLeaveTypeComponent } from './leave-type/create-leave-type/create-leave-type.component';
+import { UpdateLeaveTypeComponent } from './leave-type/update-leave-type/update-leave-type.component';
+import { LeaveTypeListComponent } from './leave-type/leave-type-list/leave-type-list.component';
+import { WorkWeekComponent } from './work-week/work-week.component';
+import { WorkWeekListComponent } from './work-week/work-week-list/work-week-list.component';
+import { CreateWorkWeekComponent } from './work-week/create-work-week/create-work-week.component';
+import { UpdateWorkWeekComponent } from './work-week/update-work-week/update-work-week.component';
+import { HolidaysComponent } from './holidays/holidays.component';
+import { HolidayListComponent } from './holidays/holiday-list/holiday-list.component';
+import { CreateHolidayComponent } from './holidays/create-holiday/create-holiday.component';
+import { UpdateHolidayComponent } from './holidays/update-holiday/update-holiday.component';
+import { ExpenseComponent } from './expense/expense.component';
+import { CreateExpenseComponent } from './expense/create-expense/create-expense.component';
+import { UpdateExpenseComponent } from './expense/update-expense/update-expense.component';
+import { ExpenseListComponent } from './expense/expense-list/expense-list.component';
+import { PaymentMethodComponent } from './payment-method/payment-method.component';
+import { PaymentMethodListComponent } from './payment-method/payment-method-list/payment-method-list.component';
+import { CreatePaymentMethodComponent } from './payment-method/create-payment-method/create-payment-method.component';
+import { UpdatePaymentMethodComponent } from './payment-method/update-payment-method/update-payment-method.component';
+import { OverTimeComponent } from './over-time/over-time.component';
+import { CreateOverTimeComponent } from './over-time/create-over-time/create-over-time.component';
+import { UpdateOverTimeComponent } from './over-time/update-over-time/update-over-time.component';
+import { OverTimeListComponent } from './over-time/over-time-list/over-time-list.component';
 
 
 @NgModule({
@@ -105,6 +129,30 @@ import { UpdateClientComponent } from './client/update-client/update-client.comp
     ClientListComponent,
     CreateClientComponent,
     UpdateClientComponent,
+    LeaveTypeComponent,
+    CreateLeaveTypeComponent,
+    UpdateLeaveTypeComponent,
+    LeaveTypeListComponent,
+    WorkWeekComponent,
+    WorkWeekListComponent,
+    CreateWorkWeekComponent,
+    UpdateWorkWeekComponent,
+    HolidaysComponent,
+    HolidayListComponent,
+    CreateHolidayComponent,
+    UpdateHolidayComponent,
+    ExpenseComponent,
+    CreateExpenseComponent,
+    UpdateExpenseComponent,
+    ExpenseListComponent,
+    PaymentMethodComponent,
+    PaymentMethodListComponent,
+    CreatePaymentMethodComponent,
+    UpdatePaymentMethodComponent,
+    OverTimeComponent,
+    CreateOverTimeComponent,
+    UpdateOverTimeComponent,
+    OverTimeListComponent
   ],
   imports: [
     CommonModule,
