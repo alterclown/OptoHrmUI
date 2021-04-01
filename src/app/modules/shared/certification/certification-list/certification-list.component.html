@@ -1,1 +1,45 @@
-<p>certification-list works!</p>
+<div class="table-operations">
+    <button nz-button >Sort age</button>
+    <button nz-button >Clear filters</button>
+    <button nz-button >Clear filters and sorters</button>
+  </div>
+  <nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Birth Date</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Address</th>
+      <th>Join Date</th>
+      <th>Leave Date</th>
+      <th>Company Id</th>
+      <th>User Id</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr >
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="primary" [routerLink]="['update/:id']"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" ><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+        </nz-button-group>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>

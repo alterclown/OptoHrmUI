@@ -9,6 +9,9 @@ import { CreateDepartmentComponent } from './department/create-department/create
 import { CreateDesignationComponent } from './designation/create-designation/create-designation.component';
 import { UpdateDepartmentComponent } from './department/update-department/update-department.component';
 import { UpdateDesignationComponent } from './designation/update-designation/update-designation.component';
+import { CreateCertificationComponent } from './certification/create-certification/create-certification.component';
+import { CertificationComponent } from './certification/certification.component';
+import { UpdateCertificationComponent } from './certification/update-certification/update-certification.component';
 
 const routes: Routes = [
   {path: 'company', component: CompanyComponent, pathMatch: 'full'},
@@ -20,6 +23,9 @@ const routes: Routes = [
   {path: 'department/create', component: CreateDepartmentComponent, pathMatch: 'full'},
   {path: 'department/update/:id', component: UpdateDepartmentComponent, pathMatch: 'full'},
   {path: 'department', component: DepartmentComponent, pathMatch: 'full'},
+  {path: 'certification', component: CertificationComponent, pathMatch: 'full'},
+  {path: 'certification/create', component: CreateCertificationComponent, pathMatch: 'full'},
+  {path: 'certification/update/:id', component: UpdateCertificationComponent, pathMatch: 'full'},
 ];
 
 @NgModule({

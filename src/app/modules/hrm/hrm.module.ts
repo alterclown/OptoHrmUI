@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HrmRoutingModule } from './hrm-routing.module';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EmployeeAttendanceComponent } from './employee-attendance/employee-attendance.component';
