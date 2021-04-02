@@ -1,10 +1,11 @@
 <div class="table-operations">
-    <button nz-button >Sort age</button>
-    <button nz-button >Clear filters</button>
-    <button nz-button >Clear filters and sorters</button>
-  </div>
-  <nz-table #filterTable nzTableLayout="fixed">
-    <thead>
+  <button nz-button [routerLink]="['create']">Create Employee</button>
+  <button nz-button>Sort age</button>
+  <button nz-button>Clear filters</button>
+  <button nz-button>Clear filters and sorters</button>
+</div>
+<nz-table #filterTable nzTableLayout="fixed">
+  <thead>
     <tr>
       <th>Employee Id</th>
       <th>First Name</th>
@@ -19,8 +20,8 @@
       <th>User Id</th>
       <th>Actions</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr *ngFor="let data of _employeeList">
       <td>{{ data.employeeId }}</td>
       <td>{{ data.firstName }}</td>
@@ -28,18 +29,20 @@
       <td>{{ data.birthDate | date:'d/M/y'}}</td>
       <td>{{ data.age }}</td>
       <td>{{ data.sex }}</td>
-      <td>{{ data.address  }}</td>
+      <td>{{ data.address }}</td>
       <td>{{ data.joinDate | date:'d/M/y'}}</td>
       <td>{{ data.leaveDate | date:'d/M/y'}}</td>
-      <td>{{ data.companyId  }}</td>
-      <td>{{ data.userId  }}</td>
+      <td>{{ data.companyId }}</td>
+      <td>{{ data.userId }}</td>
       <td>
         <nz-button-group>
-          <button nz-button nzType="primary" [routerLink]="['update/',data.employeeId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary" (click)="deleteEmployee(data.employeeId)"><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" [routerLink]="['update/',data.employeeId]"><i nz-icon nzType="edit"
+              nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteEmployee(data.employeeId)"><i nz-icon nzType="delete"
+              nzTheme="outline"></i></button>
           <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
         </nz-button-group>
       </td>
     </tr>
-    </tbody>
-  </nz-table>
+  </tbody>
+</nz-table>

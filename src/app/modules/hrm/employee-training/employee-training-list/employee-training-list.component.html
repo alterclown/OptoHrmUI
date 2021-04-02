@@ -1,10 +1,11 @@
 <div class="table-operations">
-    <button nz-button >Sort age</button>
-    <button nz-button >Clear filters</button>
-    <button nz-button >Clear filters and sorters</button>
-  </div>
-  <nz-table #filterTable  nzTableLayout="fixed">
-    <thead>
+  <button nz-button [routerLink]="['create']">Create Training</button>
+  <button nz-button>Sort age</button>
+  <button nz-button>Clear filters</button>
+  <button nz-button>Clear filters and sorters</button>
+</div>
+<nz-table #filterTable nzTableLayout="fixed">
+  <thead>
     <tr>
       <th>TrainingId</th>
       <th>EmployeeId</th>
@@ -19,27 +20,29 @@
       <th>UserId</th>
       <th>Actions</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr *ngFor="let data of _trainingList">
       <td>{{ data.trainingId }}</td>
       <td>{{ data.employeeId }}</td>
       <td>{{ data.trainingProvider }}</td>
-      <td>{{ data.trainee  }}</td>
+      <td>{{ data.trainee }}</td>
       <td>{{ data.projectName }}</td>
       <td>{{ data.trainingLocation }}</td>
       <td>{{ data.startDate }}</td>
-      <td>{{ data.endDate  }}</td>
+      <td>{{ data.endDate }}</td>
       <td>{{ data.status }}</td>
       <td>{{ data.companyId }}</td>
       <td>{{ data.userId }}</td>
       <td>
         <nz-button-group>
-          <button nz-button nzType="primary" [routerLink]="['update/',data.trainingId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary" (click)="deleteTraining(data.trainingId)" ><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" [routerLink]="['update/',data.trainingId]"><i nz-icon nzType="edit"
+              nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteTraining(data.trainingId)"><i nz-icon nzType="delete"
+              nzTheme="outline"></i></button>
           <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
         </nz-button-group>
       </td>
     </tr>
-    </tbody>
-  </nz-table>
+  </tbody>
+</nz-table>
