@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Authentication } from './modules/shared-services/Authentication.service';
-import { presetColors } from 'ng-zorro-antd/core/color';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +18,6 @@ export class AppComponent implements OnInit {
   }
   logOut() {
     Authentication.logOutFromLocalStorage();
-    this._router.navigate(['login']);
+    window.location.href = "";
   }
 }

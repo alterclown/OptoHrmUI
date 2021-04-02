@@ -31,7 +31,7 @@ export class HrmLoginComponent implements OnInit {
     this._loginService.postUser(this.userForm.value).subscribe(data => {
       console.log(data);
       localStorage.setItem('user', JSON.stringify(data));
-      this._router.navigate(['']);
+      window.location.href = "dashboard";
     });
   }
 }
