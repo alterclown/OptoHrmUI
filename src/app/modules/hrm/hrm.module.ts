@@ -29,7 +29,7 @@ import { EmployeeTaxListComponent } from './employee-tax/employee-tax-list/emplo
 import { EmployeeTrainingComponent } from './employee-training/employee-training.component';
 import { CreateEmployeeTrainingComponent } from './employee-training/create-employee-training/create-employee-training.component';
 import { EmployeeTrainingListComponent } from './employee-training/employee-training-list/employee-training-list.component';
-import { UpdateAttendanceComponent } from './employee-attendance/update-attendance/update-attendance.component';
+import { UpdateEmployeeAttendanceComponent } from './employee-attendance/update-attendance/update-attendance.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { UpdateEmployeeLeaveComponent } from './employee-leave/update-employee-leave/update-employee-leave.component';
 import { UpdateEmployeeSalaryComponent } from './employee-salary/update-employee-salary/update-employee-salary.component';
@@ -121,6 +121,7 @@ import { UpdateOverTimeRequestComponent } from './over-time-request/update-over-
 import { OverTimeRequestListComponent } from './over-time-request/over-time-request-list/over-time-request-list.component';
 import { CreateMonitorAttendanceComponent } from './monitor-attendance/create-monitor-attendance/create-monitor-attendance.component';
 import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-monitor-attendance/update-monitor-attendance.component';
+import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -150,7 +151,7 @@ import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-mo
     EmployeeTrainingComponent,
     CreateEmployeeTrainingComponent,
     EmployeeTrainingListComponent,
-    UpdateAttendanceComponent,
+    UpdateEmployeeAttendanceComponent,
     UpdateEmployeeComponent,
     UpdateEmployeeLeaveComponent,
     UpdateEmployeeSalaryComponent,
@@ -200,6 +201,7 @@ import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-mo
     AttendanceComponent,
     CreateAttendanceComponent,
     AttendanceListComponent,
+    UpdateAttendanceComponent,
     PersonalDocumentComponent,
     CreatePersonalDocumentComponent,
     UpdatePersonalDocumentComponent,

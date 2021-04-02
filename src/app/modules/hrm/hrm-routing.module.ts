@@ -18,7 +18,7 @@ import { CreateEmployeeTaxComponent } from './employee-tax/create-employee-tax/c
 import { EmployeeTaxComponent } from './employee-tax/employee-tax.component';
 import { EmployeeTrainingComponent } from './employee-training/employee-training.component';
 import { CreateEmployeeTrainingComponent } from './employee-training/create-employee-training/create-employee-training.component';
-import { UpdateAttendanceComponent } from './employee-attendance/update-attendance/update-attendance.component';
+import { UpdateEmployeeAttendanceComponent } from './employee-attendance/update-attendance/update-attendance.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { UpdateEmployeeLeaveComponent } from './employee-leave/update-employee-leave/update-employee-leave.component';
 import { UpdateEmployeeSalaryComponent } from './employee-salary/update-employee-salary/update-employee-salary.component';
@@ -89,7 +89,7 @@ import { UpdateTrainingSetupComponent } from './training-setup/update-training-s
 import { CreateTravelComponent } from './travel/create-travel/create-travel.component';
 import { TravelComponent } from './travel/travel.component';
 import { UpdateTravelComponent } from './travel/update-travel/update-travel.component';
-//import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
+import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
 
 const routes: Routes = [
   {path: 'employee/create', component: CreateEmployeeComponent, pathMatch: 'full'},
@@ -97,7 +97,7 @@ const routes: Routes = [
   {path: 'employee/update/:id', component: UpdateEmployeeComponent, pathMatch: 'full'},
   {path: 'employee-attendance', component: EmployeeAttendanceComponent, pathMatch: 'full'},
   {path: 'employee-attendance/create', component: CreateEmployeeAttendanceComponent, pathMatch: 'full'},
-  {path: 'employee-attendance/update/:id', component: UpdateAttendanceComponent, pathMatch: 'full'},
+  {path: 'employee-attendance/update/:id', component: UpdateEmployeeAttendanceComponent, pathMatch: 'full'},
   {path: 'employee-salary', component: EmployeeSalaryComponent, pathMatch: 'full'},
   {path: 'employee-salary/create', component: CreateEmployeeSalaryComponent, pathMatch: 'full'},
   {path: 'employee-salary/update/:id', component: UpdateEmployeeSalaryComponent, pathMatch: 'full'},
@@ -121,7 +121,7 @@ const routes: Routes = [
   {path: 'employee-training', component: EmployeeTrainingComponent, pathMatch: 'full'},
 
   {path: 'attendance/create', component: CreateAttendanceComponent, pathMatch: 'full'},
-  //{path: 'attendance/update/:id', component: UpdateAttendanceComponent, pathMatch: 'full'},
+  {path: 'attendance/update/:id', component: UpdateAttendanceComponent, pathMatch: 'full'},
   {path: 'attendance', component: AttendanceComponent, pathMatch: 'full'},
 
   {path: 'archieved/create', component: CreateEmployeeArchivedComponent, pathMatch: 'full'},

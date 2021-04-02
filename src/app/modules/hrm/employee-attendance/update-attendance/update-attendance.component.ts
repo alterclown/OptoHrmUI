@@ -9,7 +9,7 @@ import { EmployeeAttendanceService } from '../employee-attendance-services/emplo
   templateUrl: './update-attendance.component.html',
   styleUrls: ['./update-attendance.component.scss']
 })
-export class UpdateAttendanceComponent implements OnInit {
+export class UpdateEmployeeAttendanceComponent implements OnInit {
   attendForm: FormGroup;
   constructor(private fb: FormBuilder, private attendanceService: EmployeeAttendanceService, private _router: Router, private _avRoute: ActivatedRoute) { }
 
