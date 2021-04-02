@@ -119,6 +119,8 @@ import { OverTimeRequestComponent } from './over-time-request/over-time-request.
 import { CreateOverTimeRequestComponent } from './over-time-request/create-over-time-request/create-over-time-request.component';
 import { UpdateOverTimeRequestComponent } from './over-time-request/update-over-time-request/update-over-time-request.component';
 import { OverTimeRequestListComponent } from './over-time-request/over-time-request-list/over-time-request-list.component';
+import { CreateMonitorAttendanceComponent } from './monitor-attendance/create-monitor-attendance/create-monitor-attendance.component';
+import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-monitor-attendance/update-monitor-attendance.component';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -238,6 +240,8 @@ import { OverTimeRequestListComponent } from './over-time-request/over-time-requ
     CreateOverTimeRequestComponent,
     UpdateOverTimeRequestComponent,
     OverTimeRequestListComponent,
+    CreateMonitorAttendanceComponent,
+    UpdateMonitorAttendanceComponent,
   ],
   imports: [
     CommonModule,
