@@ -16,20 +16,30 @@ export class UpdateCompanyComponent implements OnInit {
     this.getCompanyParamData();
     this.submitCompany();
   }
-  
+
   submitCompany() {
     this.companyForm = this.fb.group({
       CompanyName: [''],
+      CompanyDetails: [''],
+      CompanyAddress: [''],
+      CompanyType: [''],
+      CompanyCountry: [''],
+      CompanyTimeZone: [''],
       LicenseKey: [''],
       LicenseKeyStartDate: [''],
       LicenseKeyExpireDate: ['']
     });
   }
-  getCompanyParamData(){
+  getCompanyParamData() {
     this._companyService.getCompanyById(this._avRoute.snapshot.params.id).subscribe(data => {
       console.log(data)
       this.companyForm = this.fb.group({
         CompanyName: (data['companyName']),
+        CompanyDetails: (data['companyDetails']),
+        CompanyAddress: (data['companyAddress']),
+        CompanyType: (data['companyType']),
+        CompanyCountry: (data['companyCountry']),
+        CompanyTimeZone: (data['companyTimeZone']),
         LicenseKey: (data['licenseKey']),
         LicenseKeyStartDate: (data['licenseKeyStartDate']),
         LicenseKeyExpireDate: (data['licenseKeyExpireDate']),
@@ -38,7 +48,7 @@ export class UpdateCompanyComponent implements OnInit {
   }
 
   onUpdate() {
-    this._companyService.putCompany(this._avRoute.snapshot.params.id,this.companyForm.value).subscribe(data => {
+    this._companyService.putCompany(this._avRoute.snapshot.params.id, this.companyForm.value).subscribe(data => {
       console.log(data);
       this._router.navigate(['dashboard']);
     });

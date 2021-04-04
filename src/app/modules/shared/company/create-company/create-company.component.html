@@ -1,38 +1,63 @@
 <nz-page-header-title>Create</nz-page-header-title>
-<form nz-form [formGroup]="companyForm" (ngSubmit) = "onSubmit()" >
-    <!-- <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="text">Company Id</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24">
-        <input nz-input  id="CompanyId" />
-      </nz-form-control>
-    </nz-form-item> -->
-    <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyName" nzRequired>Company Name</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
-        <input nz-input formControlName="CompanyName" type="CompanyName" id="CompanyName" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKey" nzRequired>License Key</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
-        <input nz-input formControlName="LicenseKey" type="LicenseKey" id="LicenseKey" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKeyStartDate" nzRequired>Date Created</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
-        <input nz-input formControlName="LicenseKeyStartDate" type="LicenseKeyStartDate" id="LicenseKeyStartDate" />
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKeyExpireDate" nzRequired>Expire Date</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
-        <input nz-input formControlName="LicenseKeyExpireDate" type="LicenseKeyExpireDate" id="DateUpdated"/>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item nz-row class="register-area">
-      <nz-form-control [nzSpan]="14" [nzOffset]="6">
-        <button nz-button nzType="primary">Save</button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
+<form nz-form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyName" nzRequired>Company Name</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="CompanyName" type="CompanyName" id="CompanyName" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyDetails" nzRequired>Company Details</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="CompanyDetails" type="CompanyDetails" id="CompanyDetails" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyAddress" nzRequired>Company Address</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="CompanyAddress" type="CompanyAddress" id="CompanyAddress" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyType" nzRequired>Company Type</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="CompanyType" type="CompanyType" id="CompanyType" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyCountry" nzRequired>Company Country</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="CompanyCountry" type="CompanyCountry" id="CompanyCountry" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="CompanyTimeZone" nzRequired>Company TimeZone</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="CompanyTimeZone" type="CompanyTimeZone" id="CompanyTimeZone" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKey" nzRequired>License Key</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="LicenseKey" type="LicenseKey" id="LicenseKey" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKeyStartDate" nzRequired>Date Created</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="LicenseKeyStartDate" type="LicenseKeyStartDate" id="LicenseKeyStartDate" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LicenseKeyExpireDate" nzRequired>Expire Date</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+      <input nz-input formControlName="LicenseKeyExpireDate" type="LicenseKeyExpireDate" id="DateUpdated" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">Save</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

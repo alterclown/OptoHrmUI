@@ -1,35 +1,47 @@
 <div class="table-operations">
-  <button nz-button  [routerLink]="['create']">Create a Company</button>
-  <button nz-button >Sort age</button>
-  <button nz-button >Clear filters</button>
-  <button nz-button >Clear filters and sorters</button>
+  <button nz-button [routerLink]="['create']">Create a Company</button>
+  <button nz-button>Sort age</button>
+  <button nz-button>Clear filters</button>
+  <button nz-button>Clear filters and sorters</button>
 </div>
 <nz-table #filterTable nzTableLayout="fixed">
   <thead>
-  <tr>
-    <th>Company Id</th>
-    <th>Company Name</th>
-    <th>License Key</th>
-    <th>License Start Date</th>
-    <th>License Start Date</th>
-    <th>Actions</th>
-  </tr>
+    <tr>
+      <th>Company Id</th>
+      <th>Company Name</th>
+      <th>Company Details</th>
+      <th>Company Address</th>
+      <th>Company Type</th>
+      <th>Company Country</th>
+      <th>Company TimeZone</th>
+      <th>License Key</th>
+      <th>License Start Date</th>
+      <th>License Start Date</th>
+      <th>Actions</th>
+    </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of companyList">
-    <td>{{ data.companyId }}</td>
-    <td>{{ data.companyName }}</td>
-    <td>{{ data.licenseKey }}</td>
-    <td>{{ data.licenseKeyStartDate | date:'d/M/y' }}</td>
-    <td>{{ data.licenseKeyExpireDate | date:'d/M/y'  }}</td>
-    <td>
-      <nz-button-group>
-        <button nz-button nzType="primary" [routerLink]="['update/', data.companyId]"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
-        <button nz-button nzType="primary" (click)="deleteCompany(data.companyId)" ><i nz-icon nzType="delete" nzTheme="outline"></i></button>
-        <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
-      </nz-button-group>  
-    </td>
-  </tr>
+    <tr *ngFor="let data of companyList">
+      <td>{{ data.companyId }}</td>
+      <td>{{ data.companyName }}</td>
+      <td>{{ data.companyDetails }}</td>
+      <td>{{ data.companyAddress }}</td>
+      <td>{{ data.companyType }}</td>
+      <td>{{ data.companyCountry }}</td>
+      <td>{{ data.companyTimeZone }}</td>
+      <td>{{ data.licenseKey }}</td>
+      <td>{{ data.licenseKeyStartDate | date:'d/M/y' }}</td>
+      <td>{{ data.licenseKeyExpireDate | date:'d/M/y' }}</td>
+      <td>
+        <nz-button-group>
+          <button nz-button nzType="primary" [routerLink]="['update/', data.companyId]"><i nz-icon nzType="edit"
+              nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteCompany(data.companyId)"><i nz-icon nzType="delete"
+              nzTheme="outline"></i></button>
+          <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+        </nz-button-group>
+      </td>
+    </tr>
   </tbody>
 </nz-table>
 <router-outlet></router-outlet>

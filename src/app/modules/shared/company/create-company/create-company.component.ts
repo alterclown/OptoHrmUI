@@ -11,18 +11,23 @@ import { CompanyService } from '../service/company.service';
 export class CreateCompanyComponent implements OnInit {
   companyForm: FormGroup;
   constructor(private fb: FormBuilder, private _companyService: CompanyService, private _router: Router, private _avRoute: ActivatedRoute) {
-  
+
     this.submitCompany();
   }
 
   ngOnInit(): void {
     this.submitCompany();
-    
+
   }
 
   submitCompany() {
     this.companyForm = this.fb.group({
       CompanyName: [''],
+      CompanyDetails: [''],
+      CompanyAddress: [''],
+      CompanyType: [''],
+      CompanyCountry: [''],
+      CompanyTimeZone: [''],
       LicenseKey: [''],
       LicenseKeyStartDate: [''],
       LicenseKeyExpireDate: ['']
