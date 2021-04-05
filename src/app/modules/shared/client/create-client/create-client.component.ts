@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Authentication } from 'src/app/modules/shared-services/Authentication.service';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'app-create-client',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreateClientComponent implements OnInit {
   clientForm: FormGroup;
-  constructor(private fb: FormBuilder, private _router: Router) {
+  constructor(private fb: FormBuilder, private _router: Router,private clientService:ClientService) {
     this.submitClient();
   }
 
@@ -18,7 +20,6 @@ export class CreateClientComponent implements OnInit {
   }
   submitClient() {
     this.clientForm = this.fb.group({
-      ClientId: [''],
       ClientName: [''],
       Details: [''],
       Address: [''],
@@ -27,15 +28,14 @@ export class CreateClientComponent implements OnInit {
       CompanyUrl: [''],
       Status: [''],
       FirstContactDate: [''],
-      CompanyId: [''],
+      CompanyId: Authentication.getCompanyIdFromLocalStorage()
     });
   }
-  //   onSubmit(){
-  //     this.employeeService.postEmployee(this.employeeForm.value).subscribe(data =>{
-  //       console.log(data);
-  //       this._router.navigate(['employee']);
-
-  //     });
-  //  }
+    onSubmit(){
+      this.clientService.postClient(this.clientForm.value).subscribe(data =>{
+        console.log(data);
+        //this._router.navigate(['employee']);
+      });
+   }
 
 }
