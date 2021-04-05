@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Authentication } from 'src/app/modules/shared-services/Authentication.service';
+import { CertificationService } from '../services/certification.service';
 
 @Component({
   selector: 'app-create-certification',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreateCertificationComponent implements OnInit {
   certificationForm: FormGroup;
-  constructor(private fb: FormBuilder, private _router: Router) {
+  constructor(private fb: FormBuilder, private _router: Router, private certificateService:CertificationService) {
     this.submitCertification();
   }
 
@@ -18,17 +20,15 @@ export class CreateCertificationComponent implements OnInit {
   }
   submitCertification() {
     this.certificationForm = this.fb.group({
-      CertificationId: [''],
       CertificationName: [''],
       Description: [''],
-      CompanyId: [''],
+      CompanyId: Authentication.getCompanyIdFromLocalStorage()
     });
   }
-  //   onSubmit(){
-  //     this.employeeService.postEmployee(this.employeeForm.value).subscribe(data =>{
-  //       console.log(data);
-  //       this._router.navigate(['employee']);
-
-  //     });
-  //  }
+    onSubmit(){
+      this.certificateService.postCertification(this.certificationForm.value).subscribe(data =>{
+        console.log(data);
+        //this._router.navigate(['']);
+      });
+   }
 }
