@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ExpenseService } from '../services/expense.service';
 
 @Component({
   selector: 'app-expense-list',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expense-list.component.scss']
 })
 export class ExpenseListComponent implements OnInit {
-
-  constructor() { }
+  expenseList:any;
+  constructor(private expenseService:ExpenseService,private _router: Router) { }
 
   ngOnInit(): void {
+    this.getData();
   }
-
+  getData(){
+    this.expenseService.getExpenseData().subscribe( data =>{
+      this.expenseList = data;
+    });
+  }
+  deleteExpense(expenseId){
+    this.expenseService.deleteExpense(expenseId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this.expenseList.splice(0,1);
+    //this.getData();
+  }
 }
