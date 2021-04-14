@@ -4,6 +4,11 @@
     <button nz-button>Clear filters</button>
     <button nz-button>Clear filters and sorters</button>
 </div>
+<div class="center">
+    <circle-progress *ngIf="showSpinner" [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="10000">
+    </circle-progress>
+</div>
 <nz-table #filterTable nzTableLayout="fixed">
     <thead>
         <tr>

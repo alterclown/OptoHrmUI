@@ -122,6 +122,7 @@ import { OverTimeRequestListComponent } from './over-time-request/over-time-requ
 import { CreateMonitorAttendanceComponent } from './monitor-attendance/create-monitor-attendance/create-monitor-attendance.component';
 import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-monitor-attendance/update-monitor-attendance.component';
 import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -249,6 +250,14 @@ import { UpdateAttendanceComponent } from './attendance/update-attendance/update
     CommonModule,
     HrmRoutingModule,
     CommonSharedModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ]
 })
 export class HrmModule {

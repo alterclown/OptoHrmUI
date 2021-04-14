@@ -8,6 +8,7 @@ import { EmployeeCertificationService } from '../services/employee-certification
 })
 export class EmployeeCertificationListComponent implements OnInit {
   _employeeCertificationList:any;
+  showSpinner = true;
   constructor(private employeeCertificationService: EmployeeCertificationService) {
   }
 
@@ -17,6 +18,7 @@ export class EmployeeCertificationListComponent implements OnInit {
   getData(){
     this.employeeCertificationService.getEmployeeCertification().subscribe( data =>{
       this._employeeCertificationList = data;
+      this.showSpinner= false;
     });
   }
   deleteEmployeeCertification(employeeCertificationId: number){
