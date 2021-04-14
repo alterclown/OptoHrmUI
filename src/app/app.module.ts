@@ -15,6 +15,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { CommonSharedModule } from './common.module';
 import { PagesModule } from './pages/pages.module';
 import { HrmLoginComponent } from './pages/hrm-login/hrm-login.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 registerLocaleData(en);
 
@@ -32,7 +33,16 @@ registerLocaleData(en);
     NzLayoutModule,
     NzMenuModule,
     CommonSharedModule,
-    PagesModule
+    PagesModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
