@@ -1,1 +1,49 @@
-<p>employee-certification-list works!</p>
+<div class="table-operations">
+    <button nz-button [routerLink]="['create']">Employee Certification</button>
+    <button nz-button>Sort age</button>
+    <button nz-button>Clear filters</button>
+    <button nz-button>Clear filters and sorters</button>
+</div>
+<nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Employee Certification Id</th>
+            <th>Employee Name</th>
+            <th>Certification</th>
+            <th>Institute</th>
+            <th>Granted On</th>
+            <th>Valid Thru</th>
+            <th>Employee Id</th>
+            <th>CompanyId</th>
+            <th>UserId</th>
+            <th>CertificationId</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of _employeeCertificationList;index as i">
+            <td>{{ i+1 }}</td>
+            <td>{{ data.employeeCertificationId }}</td>
+            <td>{{ data.employeeName }}</td>
+            <td>{{ data.certification }}</td>
+            <td>{{ data.institute }}</td>
+            <td>{{ data.grantedOn | date: 'd/M/Y' }}</td>
+            <td>{{ data.validThru | date: 'd/M/Y' }}</td>
+            <td>{{ data.employeeId }}</td>
+            <td>{{ data.companyId }}</td>
+            <td>{{ data.userId }}</td>
+            <td>{{ data.certificationId }}</td>
+            <td>
+                <nz-button-group>
+                    <button nz-button nzType="primary" [routerLink]="['update/',data.employeeCertificationId]"><i
+                            nz-icon nzType="edit" nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary"
+                        (click)="deleteEmployeeCertification(data.employeeCertificationId)"><i nz-icon nzType="delete"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+                </nz-button-group>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
