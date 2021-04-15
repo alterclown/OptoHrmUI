@@ -50,7 +50,7 @@
                         <a routerLink="dashboard/hrm/employee-dependent">Employee Dependent</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
-                        <a routerLink="dashboard/hrm/employee-training">Employee Training</a>
+                        <a routerLink="dashboard/hrm/employee-education">Employee Education</a>
                     </li>
                 </ul>
             </li>
@@ -74,14 +74,14 @@
             <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
                 (click)="isCollapsed = !isCollapsed"></i>
             <div class="user-area">
+                <span>
+                    <nz-tag [nzColor]="'#87d068'">{{userName}}</nz-tag>
+                </span>
                 <nz-badge [nzCount]="5" style="margin-right: 24px;">
                     <nz-avatar class="head-example" nzIcon="user"
                         nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
                     </nz-avatar>
                 </nz-badge>
-                <span>
-                    <nz-tag [nzColor]="'#87d068'">{{userName}}</nz-tag>
-                </span>
                 <span class="header-trigger" (click)="logOut()">
                     <i nz-icon nzType="logout" nzTheme="outline"></i>
                 </span>
