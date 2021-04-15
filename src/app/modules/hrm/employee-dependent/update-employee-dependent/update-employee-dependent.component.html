@@ -1,1 +1,39 @@
-<p>update-employee-dependent works!</p>
+<nz-page-header-title>Employee Dependent</nz-page-header-title>
+<form nz-form [formGroup]="dependentForm" (ngSubmit)="onUpdate()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>Employee Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="EmployeeName" id="EmployeeName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Name" nzRequired>Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Name" id="Name" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Relationship" nzRequired>Relationship</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Relationship" id="Relationship" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="DateofBirth" nzRequired>Date of Birth</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker type="text" formControlName="DateofBirth"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="IdNumber" nzRequired>Id Number</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="IdNumber" id="IdNumber" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
+
