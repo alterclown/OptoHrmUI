@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeExpenseService } from '../services/employee-expense.service';
 
 @Component({
   selector: 'app-employee-expense-list',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeExpenseListComponent implements OnInit {
 
-  constructor() { }
+  _employeeExpenseList:any;
+  showSpinner = true;
+  constructor(private employeeExpenseService: EmployeeExpenseService) {
+  }
 
   ngOnInit(): void {
+    this.getData();
+  }
+  getData(){
+    this.employeeExpenseService.getEmployeeExpense().subscribe( data =>{
+      this._employeeExpenseList = data;
+      this.showSpinner= false;
+    });
+  }
+  deleteEmployeeExpense(employeeExpenseId: number){
+    this.employeeExpenseService.deleteEmployeeExpense(employeeExpenseId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._employeeExpenseList.splice(0,1);
   }
 
 }

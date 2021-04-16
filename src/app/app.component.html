@@ -55,6 +55,9 @@
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="dashboard/hrm/emergency-contact">Emergency Contact</a>
                     </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="dashboard/hrm/employee-expense">Employee-Expense</a>
+                    </li>
                 </ul>
             </li>
             <li nz-submenu nzOpen nzTitle="Payroll" nzIcon="ungroup" nzTheme="outline">
@@ -81,8 +84,7 @@
                     <nz-tag [nzColor]="'#87d068'">{{userName}}</nz-tag>
                 </span>
                 <nz-badge [nzCount]="5" style="margin-right: 24px;">
-                    <nz-avatar class="head-example" nzIcon="user"
-                        nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                    <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
                     </nz-avatar>
                 </nz-badge>
                 <span class="header-trigger" (click)="logOut()">

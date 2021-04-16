@@ -1,1 +1,68 @@
-<p>employee-expense-list works!</p>
+<div class="table-operations">
+    <button nz-button [routerLink]="['create']">Employee Expense</button>
+    <button nz-button>Sort age</button>
+    <button nz-button>Clear filters</button>
+    <button nz-button>Clear filters and sorters</button>
+</div>
+<div class="center">
+    <circle-progress *ngIf="showSpinner" [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="10000">
+    </circle-progress>
+</div>
+<nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Employee ExpenseId</th>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>PaymentMethod</th>
+            <th>TransactionNo</th>
+            <th>Payee</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Attachment</th>
+            <th>ExpenseId</th>
+            <th>PaymentMethodId</th>
+            <th>Employee Id</th>
+            <th>Company Id</th>
+            <th>User Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of _employeeExpenseList;index as i">
+            <td>{{ i+1 }}</td>
+            <td>{{ data.employeeExpenseId }}</td>
+            <td>{{ data.employeeName }}</td>
+            <td>{{ data.date | date:'d/M/y' }}</td>
+            <td>{{ data.paymentMethod }}</td>
+            <td>{{ data.transactionNo }}</td>
+            <td>{{ data.payee }}</td>
+            <td>{{ data.category }}</td>
+            <td>{{ data.amount }}</td>
+            <td>{{ data.currency }}</td>
+            <td>{{ data.status }}</td>
+            <td>{{ data.notes }}</td>
+            <td>{{ data.attachment }}</td>
+            <td>{{ data.expenseId }}</td>
+            <td>{{ data.paymentMethodId }}</td>
+            <td>{{ data.employeeId }}</td>
+            <td>{{ data.companyId }}</td>
+            <td>{{ data.userId }}</td>
+            <td>
+                <nz-button-group>
+                    <button nz-button nzType="primary" [routerLink]="['update/',data.employeeExpenseId]"><i nz-icon
+                            nzType="edit" nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary"
+                        (click)="deleteEmployeeExpense(data.employeeExpenseId)"><i nz-icon nzType="delete"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+                </nz-button-group>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>

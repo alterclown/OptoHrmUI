@@ -1,1 +1,92 @@
-<p>create-employee-expense works!</p>
+<nz-page-header-title>Employee Expense</nz-page-header-title>
+<form nz-form [formGroup]="employeeExpenseForm" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>Employee Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="EmployeeName" id="EmployeeName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Date" nzRequired>Date</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker type="text" formControlName="Date"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PaymentMethod" nzRequired>PaymentMethod</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="PaymentMethod" id="PaymentMethod" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TransactionNo" nzRequired>Transaction No</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="TransactionNo" id="TransactionNo" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Payee" nzRequired>Payee</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Payee" id="Payee" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Category" nzRequired>Category</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Category" id="Category" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Amount" nzRequired>Amount</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Amount" id="Amount" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Currency" nzRequired>Currency</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Currency" id="Currency" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Status" nzRequired>Status</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Status" id="Status" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Notes" nzRequired>Notes</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Notes" id="Notes" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Attachment" nzRequired>Attachment</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Attachment" id="Attachment" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ExpenseId" nzRequired>ExpenseId</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="ExpenseId" id="ExpenseId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Employee Id</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="EmployeeId" id="EmployeeId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PaymentMethodId" nzRequired>PaymentMethod Id</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="PaymentMethodId" id="PaymentMethodId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
