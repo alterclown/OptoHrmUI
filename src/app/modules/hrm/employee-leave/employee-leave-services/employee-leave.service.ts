@@ -9,24 +9,23 @@ import { EmployeeLeave } from '../models/employeeLeave';
 export class EmployeeLeaveService {
   constructor(private httpClient: HttpClient) {
   }
-  _employeeLeaveList: EmployeeLeave[] = [ ];
   formData: EmployeeLeave;
   readonly rootURL = 'https://localhost:44306/api/';
 
-  postLeave(formData) {
-    return this.httpClient.post(this.rootURL + 'Leave/PostLeave', formData);
+  postEmployeeLeave(formData) {
+    return this.httpClient.post(this.rootURL + 'EmployeeLeave/PostEmployeeLeave', formData);
   }
-  putLeave(LeaveId,data) {
-    return this.httpClient.put(this.rootURL + 'Leave/PutLeave/'+ LeaveId,data);
+  putEmployeeLeave(EmployeeLeaveId,data) {
+    return this.httpClient.put(this.rootURL + 'EmployeeLeave/PutEmployeeLeave/'+ EmployeeLeaveId,data);
   }
-  deleteLeave(leaveId: number) {
-    return this.httpClient.delete(this.rootURL +'Leave/DeleteById/'+ leaveId);
+  deleteEmployeeLeave(EmployeeLeaveId: number) {
+    return this.httpClient.delete(this.rootURL +'EmployeeLeave/DeleteById/'+ EmployeeLeaveId);
   }
 
-  getLeave(pageNo){
-    return this.httpClient.get(`${this.rootURL}/Leave/GetLeaveList?page=${pageNo}`);
+  getEmployeeLeave(){
+    return this.httpClient.get(this.rootURL + 'EmployeeLeave/GetEmployeeLeaveList');
   }
-  getLeaveId(leaveId) {
-    return this.httpClient.get(this.rootURL +'Leave/GetLeaveById/'+ leaveId);
+  getEmployeeLeaveId(EmployeeLeaveId) {
+    return this.httpClient.get(this.rootURL +'EmployeeLeave/GetEmployeeLeaveById/'+ EmployeeLeaveId);
   }
 }

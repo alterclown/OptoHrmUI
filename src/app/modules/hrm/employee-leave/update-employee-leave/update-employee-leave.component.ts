@@ -22,33 +22,34 @@ export class UpdateEmployeeLeaveComponent implements OnInit {
   }
   submitLeave() {
     this.leaveForm = this.fb.group({
-      EmployeeId: [''],
-      Month: [''],
-      StartDate: [''],
-      EndDate: [''],
-      NoOfDays: [''],
-      LeavePeriod: [''],
-      CompanyId: Authentication.getCompanyIdFromLocalStorage(),
-      UserId: Authentication.getUserIdFromLocalStorage()
+      EmployeeName:[''],
+      LeaveType:[''],
+      LeaveStartDate:[''],
+      LeaveEndDate:[''],
+      Reason:[''],
+      Attachment:[''],
+      Status:['']
     });
   }
   onUpdate() {
-    this.leaveService.putLeave(this._avRoute.snapshot.params.id, this.leaveForm.value).subscribe(data => {
+    this.leaveService.putEmployeeLeave(this._avRoute.snapshot.params.id, this.leaveForm.value).subscribe(data => {
       console.log(data);
-      //this._router.navigate(['company']);
     });
   }
   getLeaveById() {
-    this.leaveService.getLeaveId(this._avRoute.snapshot.params.id).subscribe(data => {
+    this.leaveService.getEmployeeLeaveId(this._avRoute.snapshot.params.id).subscribe(data => {
       this.leaveForm = this.fb.group({
-        EmployeeId: (data['employeeId']),
-        Month: (data['month']),
-        StartDate: (data['startDate']),
-        EndDate: (data['endDate']),
-        NoOfDays: (data['noOfDays']),
-        LeavePeriod: (data['leavePeriod']),
+        EmployeeName: (data['employeeName']),
+        LeaveType: (data['leaveType']),
+        LeaveStartDate: (data['leaveStartDate']),
+        LeaveEndDate: (data['leaveEndDate']),
+        Reason: (data['reason']),
+        Attachment: (data['attachment']),
+        Status: (data['status']),
         CompanyId: Authentication.getCompanyIdFromLocalStorage(),
-        UserId: Authentication.getUserIdFromLocalStorage()
+        UserId: Authentication.getUserIdFromLocalStorage(),
+        EmployeeId: (data['employeeId']),
+        LeaveTypeId: (data['leaveTypeId'])
       });
     });
   }

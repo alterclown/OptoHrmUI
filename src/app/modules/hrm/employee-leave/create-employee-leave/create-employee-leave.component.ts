@@ -21,20 +21,22 @@ export class CreateEmployeeLeaveComponent implements OnInit {
   }
   submitLeave(){
     this.leaveForm = this.fb.group({
-    EmployeeId:[''],
-    Month:[''],
-    StartDate:[''],
-    EndDate:[''],
-    NoOfDays:[''],
-    LeavePeriod:[''],
+    EmployeeName:[''],
+    LeaveType:[''],
+    LeaveStartDate:[''],
+    LeaveEndDate:[''],
+    Reason:[''],
+    Attachment:[''],
+    Status:[''],
     CompanyId: Authentication.getCompanyIdFromLocalStorage(),
-    UserId: Authentication.getUserIdFromLocalStorage()
+    UserId: Authentication.getUserIdFromLocalStorage(),
+    EmployeeId:[''],
+    LeaveTypeId:[''],
     });
   }
   onSubmit(){
-    this.leaveService.postLeave(this.leaveForm.value).subscribe(data =>{
+    this.leaveService.postEmployeeLeave(this.leaveForm.value).subscribe(data =>{
       console.log(data);
-      //this._router.navigate(['company']);
     });
  }
 
