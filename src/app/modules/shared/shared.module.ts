@@ -78,6 +78,7 @@ import { OverTimeComponent } from './over-time/over-time.component';
 import { CreateOverTimeComponent } from './over-time/create-over-time/create-over-time.component';
 import { UpdateOverTimeComponent } from './over-time/update-over-time/update-over-time.component';
 import { OverTimeListComponent } from './over-time/over-time-list/over-time-list.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @NgModule({
@@ -161,7 +162,15 @@ import { OverTimeListComponent } from './over-time/over-time-list/over-time-list
     NzTableModule,
     ReactiveFormsModule,
     NzFormModule,
-    CommonSharedModule
+    CommonSharedModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ]
 })
 export class SharedModule { }

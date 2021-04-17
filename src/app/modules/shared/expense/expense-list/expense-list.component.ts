@@ -9,6 +9,7 @@ import { ExpenseService } from '../services/expense.service';
 })
 export class ExpenseListComponent implements OnInit {
   expenseList:any;
+  showSpinner = true;
   constructor(private expenseService:ExpenseService,private _router: Router) { }
 
   ngOnInit(): void {
@@ -17,6 +18,7 @@ export class ExpenseListComponent implements OnInit {
   getData(){
     this.expenseService.getExpenseData().subscribe( data =>{
       this.expenseList = data;
+      this.showSpinner = false;
     });
   }
   deleteExpense(expenseId){
@@ -24,6 +26,5 @@ export class ExpenseListComponent implements OnInit {
       console.log('Deleted!');
     });
     this.expenseList.splice(0,1);
-    //this.getData();
   }
 }
