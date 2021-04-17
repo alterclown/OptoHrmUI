@@ -8,6 +8,7 @@ import { EmployeeProjectService } from '../services/employee-project.service';
 })
 export class EmployeeProjectListComponent implements OnInit {
 _projectList:any;
+showSpinner = true;
   constructor(private projectService: EmployeeProjectService) {
   }
 
@@ -15,12 +16,13 @@ _projectList:any;
     this.getData();
   }
   getData(){
-    this.projectService.getProject().subscribe( data =>{
+    this.projectService.getEmployeeProject().subscribe( data =>{
       this._projectList = data;
+      this.showSpinner = false;
     });
   }
-  deleteProject(projectHandleId: number){
-    this.projectService.deleteProject(projectHandleId).subscribe(() => {
+  deleteProject(employeeProjectId: number){
+    this.projectService.deleteEmployeeProject(employeeProjectId).subscribe(() => {
       console.log('Deleted!');
     });
     this._projectList.splice(0,1);

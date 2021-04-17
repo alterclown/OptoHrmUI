@@ -21,29 +21,26 @@ export class UpdateEmployeeProjectComponent implements OnInit {
   }
   submitProject(){
     this.projectForm = this.fb.group({
-    EmployeeId:[''],
-    ProjectName:[''],
-    DateStarted:[''],
-    DateEnded:[''],
-    Status:[''],
-    CompanyId:Authentication.getCompanyIdFromLocalStorage(),
-    UserId:Authentication.getUserIdFromLocalStorage()
+      EmployeeProjectName: [''],
+      EmployeeName: [''],
+      Details: [''],
+      EmployeeId: [''],
+      CompanyId: Authentication.getCompanyIdFromLocalStorage(),
+      UserId: Authentication.getUserIdFromLocalStorage()
     });
   }
   onUpdate(){
-    this.projectService.putProject(this._avRoute.snapshot.params.id,this.projectForm.value).subscribe(data =>{
+    this.projectService.putEmployeeProject(this._avRoute.snapshot.params.id,this.projectForm.value).subscribe(data =>{
       console.log(data);
-      //this._router.navigate(['company']);
     });
  }
  getProjectById() {
-  this.projectService.getProjectId(this._avRoute.snapshot.params.id).subscribe(data => {
+  this.projectService.getEmployeeProjectId(this._avRoute.snapshot.params.id).subscribe(data => {
     this.projectForm = this.fb.group({
+      EmployeeProjectName: (data['employeeProjectName']),
+      EmployeeName: (data['employeeName']),
+      Details: (data['details']),
       EmployeeId: (data['employeeId']),
-      ProjectName: (data['projectName']),
-      DateStarted: (data['dateStarted']),
-      DateEnded: (data['dateEnded']),
-      Status: (data['status']),
       CompanyId:Authentication.getCompanyIdFromLocalStorage(),
       UserId:Authentication.getUserIdFromLocalStorage()
     });

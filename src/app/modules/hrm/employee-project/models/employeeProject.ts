@@ -1,10 +1,9 @@
 export interface EmployeeProject{
-    ProjectHandleId:number,
+    EmployeeProjectId:number,
+    EmployeeProjectName:string,
+    EmployeeName:string,
+    Details:string,
     EmployeeId:number,
-    ProjectName:string,
-    DateStarted:string,
-    DateEnded:string,
-    Status:string,
     CompanyId:number,
     UserId:number,
  

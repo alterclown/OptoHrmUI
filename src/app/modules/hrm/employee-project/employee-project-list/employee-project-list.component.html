@@ -4,34 +4,39 @@
   <button nz-button>Clear filters</button>
   <button nz-button>Clear filters and sorters</button>
 </div>
+<div class="center">
+  <circle-progress *ngIf="showSpinner" [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="10000">
+  </circle-progress>
+</div>
 <nz-table #filterTable nzTableLayout="fixed">
   <thead>
     <tr>
-      <th>ProjectHandleId</th>
-      <th>EmployeeId</th>
-      <th>ProjectName</th>
-      <th>DateStarted</th>
-      <th>DateEnded</th>
-      <th>Status</th>
-      <th>CompanyId</th>
-      <th>UserId</th>
+      <th>#</th>
+      <th>Employee Project Id</th>
+      <th>Employee Project Name</th>
+      <th>Employee Name</th>
+      <th>Details</th>
+      <th>Employee Id</th>
+      <th>Company Id</th>
+      <th>User Id</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of _projectList">
-      <td>{{ data.projectHandleId }}</td>
+    <tr *ngFor="let data of _projectList; index as i">
+      <td>{{ i+1 }}</td>
+      <td>{{ data.employeeProjectId }}</td>
+      <td>{{ data.employeeProjectName }}</td>
+      <td>{{ data.employeeName }}</td>
+      <td>{{ data.details }}</td>
       <td>{{ data.employeeId }}</td>
-      <td>{{ data.projectName }}</td>
-      <td>{{ data.dateStarted }}</td>
-      <td>{{ data.dateEnded }}</td>
-      <td>{{ data.status }}</td>
       <td>{{ data.companyId }}</td>
       <td>{{ data.userId }}</td>
       <td>
         <nz-button-group>
-          <button nz-button nzType="primary" [routerLink]="['update/',data.projectHandleId]"><i nz-icon nzType="edit"
+          <button nz-button nzType="primary" [routerLink]="['update/',data.employeeProjectId]"><i nz-icon nzType="edit"
               nzTheme="outline"></i></button>
-          <button nz-button nzType="primary" (click)="deleteProject(data.projectHandleId)"><i nz-icon nzType="delete"
+          <button nz-button nzType="primary" (click)="deleteProject(data.employeeProjectId)"><i nz-icon nzType="delete"
               nzTheme="outline"></i></button>
           <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
         </nz-button-group>

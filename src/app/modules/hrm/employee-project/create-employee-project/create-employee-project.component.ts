@@ -20,19 +20,17 @@ export class CreateEmployeeProjectComponent implements OnInit {
   }
   submitProject(){
     this.projectForm = this.fb.group({
+    EmployeeProjectName:[''],
+    EmployeeName:[''],
+    Details:[''],
     EmployeeId:[''],
-    ProjectName:[''],
-    DateStarted:[''],
-    DateEnded:[''],
-    Status:[''],
     CompanyId:Authentication.getCompanyIdFromLocalStorage(),
     UserId:Authentication.getUserIdFromLocalStorage()
     });
   }
   onSubmit(){
-    this.projectService.postProject(this.projectForm.value).subscribe(data =>{
+    this.projectService.postEmployeeProject(this.projectForm.value).subscribe(data =>{
       console.log(data);
-      //this._router.navigate(['company']);
     });
  }
 

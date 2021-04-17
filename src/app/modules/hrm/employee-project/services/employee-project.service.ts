@@ -14,20 +14,20 @@ export class EmployeeProjectService {
   formData: EmployeeProject;
   readonly rootURL = 'https://localhost:44306/api/';
 
-  postProject(formData) {
-    return this.httpClient.post(this.rootURL + 'Project/PostProject', formData);
+  postEmployeeProject(formData) {
+    return this.httpClient.post(this.rootURL + 'EmployeeProject/PostEmployeeProject', formData);
   }
-  putProject(ProjectHandleId, data) {
-    return this.httpClient.put(this.rootURL + 'Project/PutProject/'+ ProjectHandleId, data);
+  putEmployeeProject(EmployeeProjectId, data) {
+    return this.httpClient.put(this.rootURL + 'EmployeeProject/PutEmployeeProject/'+ EmployeeProjectId, data);
   }
-  deleteProject(projectHandleId: number) {
-    return this.httpClient.delete(this.rootURL +'Project/DeleteById/'+ projectHandleId);
+  deleteEmployeeProject(EmployeeProjectId: number) {
+    return this.httpClient.delete(this.rootURL +'EmployeeProject/DeleteById/'+ EmployeeProjectId);
   }
 
-  getProject(){
-    return this.httpClient.get(this.rootURL + 'Project/GetProjectList');
+  getEmployeeProject(){
+    return this.httpClient.get(this.rootURL + 'EmployeeProject/GetEmployeeProjectList');
   }
-  getProjectId(projectHandleId) {
-    return this.httpClient.get(this.rootURL +'Project/GetProjectById/'+ projectHandleId);
+  getEmployeeProjectId(EmployeeProjectId) {
+    return this.httpClient.get(this.rootURL +'EmployeeProject/GetEmployeeProjectById/'+ EmployeeProjectId);
   }
 }
