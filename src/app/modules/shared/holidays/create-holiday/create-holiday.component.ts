@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Authentication } from 'src/app/modules/shared-services/Authentication.service';
+import { HolidayService } from '../services/holiday.service';
 
 @Component({
   selector: 'app-create-holiday',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateHolidayComponent implements OnInit {
 
-  constructor() { }
+  holidayForm: FormGroup;
+  constructor(private fb: FormBuilder, private holidayService: HolidayService) {
+    this.submitHoliday();
+  }
 
   ngOnInit(): void {
+    this.submitHoliday();
   }
+  submitHoliday(){
+    this.holidayForm = this.fb.group({
+     Name:[''],
+     Date:[''],
+     Status:[''],
+     Country:[''],
+     EmployeeId:[''],
+     CompanyId: Authentication.getCompanyIdFromLocalStorage(),
+     UserId: Authentication.getUserIdFromLocalStorage(),
+     WorkWeekId:[''],
+    });
+  }
+  onSubmit(){
+    this.holidayService.postHoliday(this.holidayForm.value).subscribe(data =>{
+      console.log(data);
+    });
+ }
 
 }

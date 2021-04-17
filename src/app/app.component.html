@@ -27,6 +27,9 @@
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="dashboard/settings/expense">Expense</a>
                     </li>
+                    <li nz-menu-item nzMatchRouter>
+                        <a routerLink="dashboard/settings/holiday">Holiday</a>
+                    </li>
                 </ul>
             </li>
             <li nz-submenu nzTitle="HRM" nzIcon="appstore" nzTheme="outline">
@@ -99,11 +102,19 @@
                     <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
                     </nz-avatar>
                 </nz-badge>
-                <span class="header-trigger" (click)="logOut()">
+                <span class="header-trigger" (click)="showModalMiddle()">
                     <i nz-icon nzType="logout" nzTheme="outline"></i>
                 </span>
             </div>
         </nz-header>
+        <nz-modal [(nzVisible)]="isVisibleMiddle" nzTitle="Logout" nzCentered
+            (nzOnCancel)="handleCancelMiddle()" (nzOnOk)="handleOkMiddle()">
+            <ng-container *nzModalContent>
+                <p>Clic Ok</p>
+                <p>To</p>
+                <p>Logout</p>
+            </ng-container>
+        </nz-modal>
         <nz-content>
             <div class="inner-content">
                 <router-outlet></router-outlet>
