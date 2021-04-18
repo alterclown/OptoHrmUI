@@ -1,1 +1,26 @@
-<p>update-paygrade works!</p>
+<nz-page-header-title> Pay Grade</nz-page-header-title>
+<form nz-form [formGroup]="payGradeForm" (ngSubmit)="onUpdate()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PayGradeName" nzRequired>PayGrade Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="PayGradeName" id="PayGradeName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="MinSalary" nzRequired>Min Salary</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="MinSalary" id="MinSalary" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="MaxSalary" nzRequired>Max Salary</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker type="text" formControlName="MaxSalary"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>

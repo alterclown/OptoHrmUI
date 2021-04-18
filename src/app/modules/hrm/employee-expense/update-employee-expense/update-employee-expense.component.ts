@@ -20,8 +20,8 @@ export class UpdateEmployeeExpenseComponent implements OnInit {
   }
   getEmployeeExpenseById() {
     this.employeeExpenseService.getEmployeeExpenseId(this._avRoute.snapshot.params.id).subscribe(data => {
-      debugger
       this.employeeExpenseForm = this.fb.group({
+        EmployeeExpenseId: (data['employeeExpenseId']),
         EmployeeName: (data['employeeName']),
         Date: (data['date']),
         PaymentMethod: (data['paymentMethod']),

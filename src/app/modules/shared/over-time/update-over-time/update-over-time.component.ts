@@ -38,6 +38,7 @@ export class UpdateOverTimeComponent implements OnInit {
   getOverTimeById() {
     this.overTimeService.getOverTimeId(this._avRoute.snapshot.params.id).subscribe(data => {
       this.overTimeForm = this.fb.group({
+        OverTimeId: (data['overTimeId']),
         Category: (data['category']),
         OverTimeName: (data['overTimeName']),
         StartTime: (data['startTime']),

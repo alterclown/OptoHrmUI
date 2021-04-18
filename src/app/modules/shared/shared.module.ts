@@ -79,6 +79,7 @@ import { CreateOverTimeComponent } from './over-time/create-over-time/create-ove
 import { UpdateOverTimeComponent } from './over-time/update-over-time/update-over-time.component';
 import { OverTimeListComponent } from './over-time/over-time-list/over-time-list.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PaygradeListComponent } from './paygrade/paygrade-list/paygrade-list.component';
 
 
 @NgModule({
@@ -102,6 +103,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     PaygradeComponent,
     CreatePaygradeComponent,
     UpdatePaygradeComponent,
+    PaygradeListComponent,
     EmploymentstatusComponent,
     EmploymentstatusListComponent,
     CreateEmploymentStatusComponent,
