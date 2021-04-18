@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LeaveTypeService } from '../services/leave-type.service';
 
 @Component({
   selector: 'app-leave-type-list',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaveTypeListComponent implements OnInit {
 
-  constructor() { }
+  _leaveTypeList: any;
+  showSpinner = true;
+  constructor(private leaveTypeService: LeaveTypeService) {
+  }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.leaveTypeService.getLeaveType().subscribe(data => {
+      this._leaveTypeList = data;
+      this.showSpinner = false;
+    });
+  }
+  deleteLeaveType(employeeSkillsId: number) {
+    this.leaveTypeService.deleteLeaveType(employeeSkillsId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._leaveTypeList.splice(0, 1);
   }
 
 }
