@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PaymentMethodService } from '../services/payment-method.service';
 
 @Component({
   selector: 'app-payment-method-list',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentMethodListComponent implements OnInit {
 
-  constructor() { }
+  _paymentList: any;
+  showSpinner = true;
+  constructor(private paymentMethodService: PaymentMethodService) {
+  }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.paymentMethodService.getPaymentMethod().subscribe(data => {
+      this._paymentList = data;
+      this.showSpinner = false;
+    });
+  }
+  deletePaymentMethod(payGradeId: number) {
+    this.paymentMethodService.deletePaymentMethod(payGradeId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._paymentList.splice(0, 1);
   }
 
 }
