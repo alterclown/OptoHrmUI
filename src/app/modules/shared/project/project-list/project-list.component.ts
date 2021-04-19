@@ -23,8 +23,8 @@ export class ProjectListComponent implements OnInit {
       this.showSpinner = false;
     });
   }
-  deleteProject(payGradeId: number) {
-    this.projectService.deleteProject(payGradeId).subscribe(() => {
+  deleteProject(projectId: number) {
+    this.projectService.deleteProject(projectId).subscribe(() => {
       console.log('Deleted!');
     });
     this._projectList.splice(0, 1);

@@ -23,8 +23,8 @@ export class SkillListComponent implements OnInit {
       this.showSpinner = false;
     });
   }
-  deleteSkill(payGradeId: number) {
-    this.skillService.deleteSkill(payGradeId).subscribe(() => {
+  deleteSkill(skillId: number) {
+    this.skillService.deleteSkill(skillId).subscribe(() => {
       console.log('Deleted!');
     });
     this._skillList.splice(0, 1);
