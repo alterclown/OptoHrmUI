@@ -6,12 +6,14 @@ import { HrmLoginComponent } from './hrm-login/hrm-login.component';
 import { CommonSharedModule } from '../common.module';
 import { HrmRoutingModule } from '../modules/hrm/hrm-routing.module';
 import { AppModule } from '../app.module';
+import { CommonComponent } from './common/common.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    HrmLoginComponent
+    HrmLoginComponent,
+    CommonComponent
   ],
   imports: [
     CommonModule,

@@ -28,13 +28,16 @@
       <td>{{ data.contactNumber }}</td>
       <td>{{ data.contactEmail }}</td>
       <td>{{ data.companyUrl }}</td>
-      <td>{{ data.status }}</td>
+      <td>
+        <nz-tag [nzColor]="'geekblue'">{{ data.status }}</nz-tag>
+      </td>
       <td>{{ data.firstContactDate }}</td>
       <td>
         <nz-button-group>
           <button nz-button nzType="primary" [routerLink]="['update/', data.clientId]"><i nz-icon nzType="edit"
               nzTheme="outline"></i></button>
-          <button nz-button nzType="primary" (click)="deleteClient(data.clientId)"><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+          <button nz-button nzType="primary" (click)="deleteClient(data.clientId)"><i nz-icon nzType="delete"
+              nzTheme="outline"></i></button>
           <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
         </nz-button-group>
       </td>
