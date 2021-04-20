@@ -1,1 +1,32 @@
-<p>update-monitor-attendance works!</p>
+<nz-page-header-title>Monitor Attendance</nz-page-header-title>
+<form nz-form [formGroup]="monitorAttendanceForm" (ngSubmit)="onUpdate()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>EmployeeName</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="EmployeeName" id="EmployeeName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TimeIn" nzRequired>TimeIn</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker nz-input type="text" formControlName="TimeIn" ></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TimeOut" nzRequired>TimeOut</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker nz-input type="text" formControlName="TimeOut" ></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Note" nzRequired>Note</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Note" id="Note" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
