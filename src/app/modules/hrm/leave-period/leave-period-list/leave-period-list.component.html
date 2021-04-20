@@ -1,1 +1,50 @@
-<p>leave-period-list works!</p>
+<p>holiday-list works!</p>
+<div class="table-operations">
+    <button nz-button [routerLink]="['create']">Create Leave</button>
+    <button nz-button>Sort age</button>
+    <button nz-button>Clear filters</button>
+    <button nz-button>Clear filters and sorters</button>
+  </div>
+  <div class="center">
+    <circle-progress *ngIf="showSpinner" [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="10000">
+    </circle-progress>
+  </div>
+  <nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>LeavePeriodId</th>
+        <th>LeavePeriodName</th>
+        <th>PeriodStartDate</th>
+        <th>PeriodEndDate</th>
+        <th>LeaveTypeId</th>
+        <th>EmployeeId</th>
+        <th>CompanyId</th>
+        <th>UserId</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of _leavePeriodList; index as i">
+        <td>{{ i+1 }}</td>
+        <td>{{ data.leavePeriodId }}</td>
+        <td>{{ data.leavePeriodName  }}</td>
+        <td>{{ data.periodStartDate | date:'d/M/y' }}</td>
+        <td>{{ data.periodEndDate | date:'d/M/y'}}</td>
+        <td>{{ data.leaveTypeId}}</td>
+        <td>{{ data.employeeId  }}</td>
+        <td>{{ data.companyId }}</td>
+        <td>{{ data.userId }}</td>
+        <td>
+          <nz-button-group>
+            <button nz-button nzType="primary" [routerLink]="['update/',data.leavePeriodId]"><i nz-icon nzType="edit"
+                nzTheme="outline"></i></button>
+            <button nz-button nzType="primary" (click)="deleteLeavePeriod(data.leavePeriodId)"><i nz-icon nzType="delete"
+                nzTheme="outline"></i></button>
+            <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+          </nz-button-group>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

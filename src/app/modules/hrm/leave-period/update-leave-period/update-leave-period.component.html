@@ -1,1 +1,26 @@
-<p>update-leave-period works!</p>
+<nz-page-header-title> Employee Leave Period</nz-page-header-title>
+<form nz-form [formGroup]="leavePeriodForm" (ngSubmit)="onUpdate()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeavePeriodName" nzRequired>LeavePeriodName</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="LeavePeriodName" id="LeavePeriodName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PeriodStartDate" nzRequired>PeriodStartDate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker type="text" formControlName="PeriodStartDate"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PeriodEndDate" nzRequired>PeriodEndDate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker type="text" formControlName="PeriodEndDate"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>
