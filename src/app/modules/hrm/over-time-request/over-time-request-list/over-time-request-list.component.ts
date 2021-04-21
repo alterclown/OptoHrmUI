@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OverTimeRequestService } from '../services/over-time-request.service';
 
 @Component({
   selector: 'app-over-time-request-list',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverTimeRequestListComponent implements OnInit {
 
-  constructor() { }
+  _overTimeRequestList: any;
+  showSpinner = true;
+  constructor(private overTimeRequestService: OverTimeRequestService) {
+  }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.overTimeRequestService.getOverTimeRequest().subscribe(data => {
+      this._overTimeRequestList = data;
+      this.showSpinner = false;
+    });
+  }
+  deleteOverTimeRequest(overTimeRequestId: number) {
+    this.overTimeRequestService.deleteOverTimeRequest(overTimeRequestId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._overTimeRequestList.splice(0, 1);
   }
 
 }
