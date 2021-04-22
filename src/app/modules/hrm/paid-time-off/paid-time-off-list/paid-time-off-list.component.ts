@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PaidTimeOffService } from '../services/paid-time.service';
 
 @Component({
@@ -9,8 +10,7 @@ import { PaidTimeOffService } from '../services/paid-time.service';
 export class PaidTimeOffListComponent implements OnInit {
 
   _paidTimeList: any;
-  showSpinner = true;
-  constructor(private paidTimeOffService: PaidTimeOffService) {
+  constructor(private paidTimeOffService: PaidTimeOffService, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
@@ -18,9 +18,11 @@ export class PaidTimeOffListComponent implements OnInit {
   }
 
   getData() {
+    this.spinner.show();
     this.paidTimeOffService.getPaidTimeOff().subscribe(data => {
+      debugger
       this._paidTimeList = data;
-      this.showSpinner = false;
+      this.spinner.hide();
     });
   }
   deletePaidTimeOff(myProjectId: number) {

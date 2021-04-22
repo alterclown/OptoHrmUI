@@ -16,6 +16,7 @@ import { CommonSharedModule } from './common.module';
 import { PagesModule } from './pages/pages.module';
 import { HrmLoginComponent } from './pages/hrm-login/hrm-login.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 registerLocaleData(en);
 
@@ -34,6 +35,7 @@ registerLocaleData(en);
     NzMenuModule,
     CommonSharedModule,
     PagesModule,
+    NgxSpinnerModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
