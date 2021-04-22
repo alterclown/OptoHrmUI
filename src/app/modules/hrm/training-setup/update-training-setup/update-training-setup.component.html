@@ -1,1 +1,80 @@
-<p>update-training-setup works!</p>
+<nz-page-header-title>Training Setup</nz-page-header-title>
+<form nz-form [formGroup]="trainingSetupForm" (ngSubmit)="onUpdate()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Code" nzRequired>Code</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Code" id="Code" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TrainingName" nzRequired>TrainingName</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="TrainingName" id="TrainingName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Coordinator" nzRequired>Coordinator</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Coordinator" id="Coordinator" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Trainer" nzRequired>Trainer</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Trainer" id="Trainer" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TraineeName" nzRequired>TraineeName</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="TraineeName" id="TraineeName" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TrainingDetails" nzRequired>TrainingDetails</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="TrainingDetails" id="TrainingDetails" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="PaymentType" nzRequired>PaymentType</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="PaymentType" id="PaymentType" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Currency" nzRequired>Currency</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Currency" id="Currency" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Cost" nzRequired>Cost</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Cost" id="Cost" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="StartDate" nzRequired>StartDate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker nz-input type="text" formControlName="StartDate" id="StartDate"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EndDate" nzRequired>EndDate</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-date-picker nz-input type="text" formControlName="EndDate" id="EndDate"></nz-date-picker>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Status" nzRequired>Status</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input type="text" formControlName="Status" id="Status" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+            <button nz-button nzType="primary">Save</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { TrainingSetupService } from '../services/training-setup.service';
 
 @Component({
   selector: 'app-training-setup-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainingSetupListComponent implements OnInit {
 
-  constructor() { }
+  _trainingSetupList: any;
+  constructor(private trainingSetupService: TrainingSetupService, private spinner: NgxSpinnerService) {
+  }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.spinner.show();
+    this.trainingSetupService.getTrainingSetup().subscribe(data => {
+      this._trainingSetupList = data;
+      this.spinner.hide();
+    });
+  }
+  deleteTrainingSetup(trainingSetupId: number) {
+    this.trainingSetupService.deleteTrainingSetup(trainingSetupId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._trainingSetupList.splice(0, 1);
   }
 
 }
