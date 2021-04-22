@@ -1,1 +1,67 @@
-<p>training-session-list works!</p>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color = "#314ef2" type = "ball-scale-ripple-multiple" [fullScreen]="true" [showSpinner]="true">
+    <p style="color: rgb(74, 62, 247)"> Loading... </p>
+  </ngx-spinner>
+  <div class="table-operations">
+    <button nz-button [routerLink]="['create']">Training Session</button>
+    <button nz-button>Sort age</button>
+    <button nz-button>Clear filters</button>
+    <button nz-button>Clear filters and sorters</button>
+  </div>
+  <nz-table #filterTable nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>TrainingSessionId</th>
+        <th>Course</th>
+        <th>TrainingName</th>
+        <th>Details</th>
+        <th>ScheduledTime</th>
+        <th>AssignmentDueDate</th>
+        <th>DeliveryMethod</th>
+        <th>DeliveryLocation</th>
+        <th>AttendanceType</th>
+        <th>AttendanceStatus</th>
+        <th>AttendanceFeedback</th>
+        <th>ProofOfCompletion</th>
+        <th>Attachment</th>
+        <th>TrainingCertificate</th>
+        <th>TrainingSetupId</th>
+        <th>EmployeeId</th>
+        <th>CompanyId</th>
+        <th>UserId</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of _trainingSessionList; index as i">
+        <td>{{ i+1 }}</td>
+        <td>{{ data.trainingSessionId }}</td>
+        <td>{{ data.course }}</td>
+        <td>{{ data.trainingName}}</td>
+        <td>{{ data.details  }}</td>
+        <td>{{ data.scheduledTime | date:'d/M/y'}}</td>
+        <td>{{ data.assignmentDueDate | date:'d/M/y'}}</td>
+        <td>{{ data.deliveryMethod }}</td>
+        <td>{{ data.deliveryLocation }}</td>
+        <td>{{ data.attendanceType }}</td>
+        <td>{{ data.attendanceStatus  }}</td>
+        <td>{{ data.attendanceFeedback }}</td>
+        <td>{{ data.proofOfCompletion }}</td>
+        <td>{{ data.attachment }}</td>
+        <td>{{ data.trainingCertificate }}</td>
+        <td>{{ data.trainingSetupId }}</td>
+        <td>{{ data.employeeId }}</td>
+        <td>{{ data.companyId }}</td>
+        <td>{{ data.userId }}</td>
+        <td>
+          <nz-button-group>
+            <button nz-button nzType="primary" [routerLink]="['update/',data.trainingSessionId]"><i nz-icon nzType="edit"
+                nzTheme="outline"></i></button>
+            <button nz-button nzType="primary" (click)="deleteTrainingSession(data.trainingSessionId)"><i nz-icon nzType="delete"
+                nzTheme="outline"></i></button>
+            <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
+          </nz-button-group>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
