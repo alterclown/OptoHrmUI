@@ -7,24 +7,41 @@ import { AttendanceService } from '../services/attendance.service';
   styleUrls: ['./attendance-list.component.scss']
 })
 export class AttendanceListComponent implements OnInit {
-  _attendanceList:any;
-  constructor(private  attendanceService: AttendanceService,) {
+  _attendanceList: any;
+  pageNumber = 1;
+  page: any;
+  pageDataLimit = 10;
+  constructor(private attendanceService: AttendanceService,) {
   }
 
   ngOnInit(): void {
     this.getData();
+    this.handleNextPage(event);
+    this.handlePreviousPage(event);
   }
-  getData(){
-    this.attendanceService.getAttendance().subscribe( data =>{
+  getData() {
+    this.attendanceService.getAttendance(this.pageNumber, this.pageDataLimit).subscribe(data => {
       this._attendanceList = data;
       //this.firstName = JSON.stringify( data );
     });
   }
-  deleteAttendance(attendanceId: number){
+  deleteAttendance(attendanceId: number) {
     this.attendanceService.deleteAttendance(attendanceId).subscribe(() => {
       console.log('Deleted!');
     });
-    this._attendanceList.splice(0,1);
+    this._attendanceList.splice(0, 1);
+  }
+  handleNextPage(e: any) {
+    this.page = this.pageNumber++;
+    this.attendanceService.getAttendance(this.page, this.pageDataLimit).subscribe(data => {
+      this._attendanceList = data;
+    });
   }
 
+  handlePreviousPage(e: any) {
+    this.page = this.pageNumber--;
+    this.attendanceService.getAttendance(this.page, this.pageDataLimit).subscribe(data => {
+      this._attendanceList = data;
+    });
+  }
 }

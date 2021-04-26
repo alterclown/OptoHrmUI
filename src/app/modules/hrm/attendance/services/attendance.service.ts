@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Attendance } from '../models/attendance';
 
 
@@ -16,18 +16,18 @@ export class AttendanceService {
   postAttendance(formData) {
     return this.httpClient.post(this.rootURL + 'Attendance/PostAttendance', formData);
   }
- 
+
   putAttendance(AttendanceeId, data) {
-    return this.httpClient.put(this.rootURL + 'Attendance/PutAttendance/'+ AttendanceeId, data);
+    return this.httpClient.put(this.rootURL + 'Attendance/PutAttendance/' + AttendanceeId, data);
   }
   deleteAttendance(AttendanceId: number) {
-    return this.httpClient.delete(this.rootURL +'Attendance/DeleteById/'+ AttendanceId);
+    return this.httpClient.delete(this.rootURL + 'Attendance/DeleteById/' + AttendanceId);
   }
 
-  getAttendance(){
-    return this.httpClient.get(this.rootURL + 'Attendance/GetAttendanceList');
+  getAttendance(pageNumber, pageDataLimit) {
+    return this.httpClient.get(this.rootURL + `Attendance/GetAttendanceList?pageNumber=${pageNumber}&pageDataLimit=${pageDataLimit}`);
   }
   getAttendanceId(AttendanceId) {
-    return this.httpClient.get(this.rootURL +'Attendance/GetAttendanceById/'+ AttendanceId);
+    return this.httpClient.get(this.rootURL + 'Attendance/GetAttendanceById/' + AttendanceId);
   }
 }
