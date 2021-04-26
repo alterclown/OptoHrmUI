@@ -16,8 +16,6 @@ export class AttendanceListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
-    this.handleNextPage(event);
-    this.handlePreviousPage(event);
   }
   getData() {
     this.attendanceService.getAttendance(this.pageNumber, this.pageDataLimit).subscribe(data => {
