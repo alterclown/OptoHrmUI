@@ -9,8 +9,9 @@ import { AttendanceService } from '../services/attendance.service';
 })
 export class AttendanceListComponent implements OnInit {
   _attendanceList: any;
-  pageNumber = 1;
-  page: any;
+  currentPage = 1;
+  previousPage = 0;
+  nextPage = 0;
   pageDataLimit = 10;
   constructor(private attendanceService: AttendanceService, private spinner: NgxSpinnerService) {
   }
@@ -20,7 +21,7 @@ export class AttendanceListComponent implements OnInit {
   }
   getData() {
     this.spinner.show();
-    this.attendanceService.getAttendance(this.pageNumber, this.pageDataLimit).subscribe(data => {
+    this.attendanceService.getAttendance(this.currentPage, this.pageDataLimit).subscribe(data => {
       this._attendanceList = data;
     });
     this.spinner.hide();
@@ -32,24 +33,24 @@ export class AttendanceListComponent implements OnInit {
     this._attendanceList.splice(0, 1);
   }
   handleNextPage(e: any) {
-    if (this.pageNumber > 0) {
-      this.page = this.pageNumber++;
+    if (this.currentPage === 1) {
+      this.nextPage = ++this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.page, this.pageDataLimit).subscribe(data => {
+      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(data => {
         this._attendanceList = data;
+        this.spinner.hide();
       });
-      this.spinner.hide();
     }
   }
 
   handlePreviousPage(e: any) {
-    if (this.pageNumber > 1 && this.pageNumber != 0) {
-      this.page = this.pageNumber--;
+    if (this.currentPage > 1) {
+      this.previousPage = --this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.page, this.pageDataLimit).subscribe(data => {
+      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(data => {
         this._attendanceList = data;
+        this.spinner.hide();
       });
-      this.spinner.hide();
     }
   }
 }
