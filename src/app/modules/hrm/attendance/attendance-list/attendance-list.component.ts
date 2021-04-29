@@ -33,7 +33,7 @@ export class AttendanceListComponent implements OnInit {
     this._attendanceList.splice(0, 1);
   }
   handleNextPage(e: any) {
-    if (this.currentPage === 1) {
+    if (this.currentPage === 1 || this.currentPage > 1) {
       this.nextPage = ++this.currentPage;
       this.spinner.show();
       this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(data => {
