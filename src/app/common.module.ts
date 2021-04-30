@@ -25,7 +25,6 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzI18nModule } from 'ng-zorro-antd/i18n';
@@ -94,7 +93,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NzDividerModule,
     NzDrawerModule,
     NzDropDownModule,
-    NzEmptyModule,
     NzFormModule,
     NzGridModule,
     NzI18nModule,
