@@ -4,7 +4,7 @@
   <button nz-button>Clear filters</button>
   <button nz-button>Clear filters and sorters</button>
 </div>
-<nz-table #filterTable nzTableLayout="fixed">
+<nz-table #editRowTable nzBordered [nzData]="['']">
   <thead>
     <tr>
       <th>Department Id</th>
