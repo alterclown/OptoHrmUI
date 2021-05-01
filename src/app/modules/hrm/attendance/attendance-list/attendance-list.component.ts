@@ -53,4 +53,22 @@ export class AttendanceListComponent implements OnInit {
       });
     }
   }
+
+  handlePreviousOrNextPage(e: any) {
+    if (this.currentPage === 1 || this.currentPage > 1) {
+      this.nextPage = ++this.currentPage;
+      this.spinner.show();
+      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(data => {
+        this._attendanceList = data;
+        this.spinner.hide();
+      });
+    } else if (this.nextPage > 1 && this.nextPage === this.currentPage) {
+      this.previousPage = --this.currentPage;
+      this.spinner.show();
+      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(data => {
+        this._attendanceList = data;
+        this.spinner.hide();
+      });
+    }
+  }
 }
