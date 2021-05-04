@@ -21,8 +21,8 @@ export class AttendanceListComponent implements OnInit {
   }
   getData() {
     this.spinner.show();
-    this.attendanceService.getAttendance(this.currentPage, this.pageDataLimit).subscribe(data => {
-      this._attendanceList = data;
+    this.attendanceService.getAttendance(this.currentPage, this.pageDataLimit).subscribe(res => {
+      this._attendanceList = res['data']
     });
     this.spinner.hide();
   }
@@ -36,8 +36,8 @@ export class AttendanceListComponent implements OnInit {
     if (this.currentPage === 1 || this.currentPage > 1) {
       this.nextPage = ++this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(data => {
-        this._attendanceList = data;
+      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(res => {
+        this._attendanceList = res['data']
         this.spinner.hide();
       });
     }
@@ -47,8 +47,8 @@ export class AttendanceListComponent implements OnInit {
     if (this.currentPage > 1) {
       this.previousPage = --this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(data => {
-        this._attendanceList = data;
+      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(res => {
+        this._attendanceList = res['data']
         this.spinner.hide();
       });
     }
@@ -58,15 +58,15 @@ export class AttendanceListComponent implements OnInit {
     if (this.currentPage === 1 || this.currentPage > 1) {
       this.nextPage = ++this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(data => {
-        this._attendanceList = data;
+      this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(res => {
+        this._attendanceList = res['data']
         this.spinner.hide();
       });
     } else if (this.nextPage > 1 && this.nextPage === this.currentPage) {
       this.previousPage = --this.currentPage;
       this.spinner.show();
-      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(data => {
-        this._attendanceList = data;
+      this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(res => {
+        this._attendanceList = res['data']
         this.spinner.hide();
       });
     }
