@@ -1,48 +1,54 @@
-<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#314ef2" type="ball-scale-ripple-multiple"
-    [fullScreen]="true" [showSpinner]="true">
-    <p style="color: rgb(74, 62, 247)"> Loading... </p>
-</ngx-spinner>
-<div class="table-operations">
-    <button nz-button [routerLink]="['create']">Create Attendance</button>
-    <button nz-button>Sort age</button>
-    <button nz-button>Clear filters</button>
-    <button nz-button>Clear filters and sorters</button>
+<div nz-row>
+    <div nz-col nzSpan="24">
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#314ef2" type="ball-scale-ripple-multiple"
+            [fullScreen]="true" [showSpinner]="true">
+            <p style="color: rgb(74, 62, 247)"> Loading... </p>
+        </ngx-spinner>
+        <div class="table-operations">
+            <button nz-button [routerLink]="['create']">Create Attendance</button>
+            <button nz-button>Sort age</button>
+            <button nz-button>Clear filters</button>
+            <button nz-button>Clear filters and sorters</button>
+        </div>
+        <nz-table #editRowTable nzBordered [nzData]="['']" [nzShowPagination]="false">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>AttendanceId</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Note</th>
+                    <th>Employee Id</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of _attendanceList; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{data.attendanceId}}</td>
+                    <td>{{data.timeIn | date:'d/M/y'}}</td>
+                    <td>{{data.timeOut | date:'d/M/y'}}</td>
+                    <td>{{data.note}}</td>
+                    <td>{{data.employeeId}}</td>
+                    <td>
+                        <nz-button-group>
+                            <button nz-button nzType="primary" [routerLink]="['update/',data.attendanceId]"><i nz-icon
+                                    nzType="edit" nzTheme="outline"></i></button>
+                            <button nz-button nzType="primary"><i nz-icon nzType="delete" nzTheme="outline"
+                                    (click)="deleteAttendance(data.attendanceId)"></i></button>
+                            <button nz-button nzType="primary"><i nz-icon nzType="fund-view"
+                                    nzTheme="outline"></i></button>
+                        </nz-button-group>
+                    </td>
+                </tr>
+                <div class="button-corner">
+                    <nz-tag [nzColor]="'purple'">Page {{pageIndex}} of {{totalPages}}</nz-tag>
+                    <button nz-button nzType="primary" (click)="handlePreviousPage($event)"><i nz-icon
+                            nzType="arrow-left"></i></button>
+                    <button nz-button nzType="primary" (click)="handleNextPage($event)"><i nz-icon
+                            nzType="arrow-right"></i></button>
+                </div>
+            </tbody>
+        </nz-table>
+    </div>
 </div>
-<nz-table #editRowTable nzBordered [nzData]="['']">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>AttendanceId</th>
-            <th>Time In</th>
-            <th>Time Out</th>
-            <th>Note</th>
-            <th>Employee Id</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let data of _attendanceList; index as i">
-            <td>{{i+1}}</td>
-            <td>{{data.attendanceId}}</td>
-            <td>{{data.timeIn | date:'d/M/y'}}</td>
-            <td>{{data.timeOut | date:'d/M/y'}}</td>
-            <td>{{data.note}}</td>
-            <td>{{data.employeeId}}</td>
-            <td>
-                <nz-button-group>
-                    <button nz-button nzType="primary" [routerLink]="['update/',data.attendanceId]"><i nz-icon
-                            nzType="edit" nzTheme="outline"></i></button>
-                    <button nz-button nzType="primary"><i nz-icon nzType="delete" nzTheme="outline"
-                            (click)="deleteAttendance(data.attendanceId)"></i></button>
-                    <button nz-button nzType="primary"><i nz-icon nzType="fund-view" nzTheme="outline"></i></button>
-                </nz-button-group>
-            </td>
-        </tr>
-        <nz-button-group>
-            <button nz-button nzType="primary" (click)="handlePreviousPage($event)"><i nz-icon nzType="left"></i> Go
-                back</button>
-            <button nz-button nzType="primary" (click)="handleNextPage($event)">Go forward<i nz-icon
-                    nzType="right"></i></button>
-        </nz-button-group>
-    </tbody>
-</nz-table>

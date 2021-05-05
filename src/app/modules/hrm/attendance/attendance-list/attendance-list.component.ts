@@ -15,6 +15,7 @@ export class AttendanceListComponent implements OnInit {
   pageDataLimit = 10;
   pageIndex: number;
   pageSize: number;
+  totalPages: number;
   constructor(private attendanceService: AttendanceService, private spinner: NgxSpinnerService) {
   }
 
@@ -26,7 +27,8 @@ export class AttendanceListComponent implements OnInit {
     this.attendanceService.getAttendance(this.currentPage, this.pageDataLimit).subscribe(res => {
       this._attendanceList = res['data'],
         this.pageIndex = res['pageNumber'],
-        this.pageSize = res['pageSize']
+        this.pageSize = res['pageSize'],
+        this.totalPages = res['totalPages']
     });
     this.spinner.hide();
   }
