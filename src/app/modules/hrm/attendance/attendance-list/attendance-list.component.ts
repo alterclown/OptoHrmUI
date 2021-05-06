@@ -61,14 +61,14 @@ export class AttendanceListComponent implements OnInit {
   }
 
   handlePreviousOrNextPage(e: any) {
-    if (this.currentPage === 1 || this.currentPage > 1) {
-      this.nextPage = ++this.currentPage;
+    if (this.pageIndex === 1 || this.pageIndex > 1) {
+      this.nextPage = ++this.pageIndex;
       this.spinner.show();
       this.attendanceService.getAttendance(this.nextPage, this.pageDataLimit).subscribe(res => {
         this._attendanceList = res['data']
         this.spinner.hide();
       });
-    } else if (this.nextPage > 1 && this.nextPage === this.currentPage) {
+    } else if (this.pageIndex > 2) {
       this.previousPage = --this.currentPage;
       this.spinner.show();
       this.attendanceService.getAttendance(this.previousPage, this.pageDataLimit).subscribe(res => {
