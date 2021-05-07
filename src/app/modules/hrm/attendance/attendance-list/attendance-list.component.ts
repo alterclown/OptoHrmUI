@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AttendanceService } from '../services/attendance.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-attendance-list',
@@ -16,7 +17,7 @@ export class AttendanceListComponent implements OnInit {
   pageIndex: number;
   pageSize: number;
   totalPages: number;
-  constructor(private attendanceService: AttendanceService, private spinner: NgxSpinnerService) {
+  constructor(private attendanceService: AttendanceService, private spinner: NgxSpinnerService, private nzMessageService: NzMessageService) {
   }
 
   ngOnInit(): void {
@@ -76,5 +77,17 @@ export class AttendanceListComponent implements OnInit {
         this.spinner.hide();
       });
     }
+  }
+
+  cancel(): void {
+    this.nzMessageService.info('click cancel');
+  }
+
+  confirmDelete(attendanceId): void {
+    this.attendanceService.deleteAttendance(attendanceId).subscribe(() => {
+      console.log('Deleted!');
+    });
+    this._attendanceList.splice(0, 1);
+    this.nzMessageService.info('Data Deleted Successfully');
   }
 }
