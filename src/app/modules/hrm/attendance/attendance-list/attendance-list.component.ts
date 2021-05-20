@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AttendanceService } from '../services/attendance.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-attendance-list',
@@ -10,6 +11,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 })
 export class AttendanceListComponent implements OnInit {
   _attendanceList: any;
+  _attendance: any;
   currentPage = 1;
   previousPage = 0;
   nextPage = 0;
@@ -19,7 +21,6 @@ export class AttendanceListComponent implements OnInit {
   totalPages: number;
   constructor(private attendanceService: AttendanceService, private spinner: NgxSpinnerService, private nzMessageService: NzMessageService) {
   }
-
   ngOnInit(): void {
     this.getData();
   }
@@ -33,12 +34,6 @@ export class AttendanceListComponent implements OnInit {
     });
     this.spinner.hide();
   }
-  deleteAttendance(attendanceId: number) {
-    this.attendanceService.deleteAttendance(attendanceId).subscribe(() => {
-      console.log('Deleted!');
-    });
-    this._attendanceList.splice(0, 1);
-  }
   handleNextPage(e: any) {
     if (this.pageIndex === 1 || this.pageIndex > 1) {
       this.nextPage = ++this.pageIndex;
@@ -49,7 +44,6 @@ export class AttendanceListComponent implements OnInit {
       });
     }
   }
-
   handlePreviousPage(e: any) {
     if (this.pageIndex > 1) {
       this.previousPage = --this.pageIndex;
@@ -60,7 +54,6 @@ export class AttendanceListComponent implements OnInit {
       });
     }
   }
-
   handlePreviousOrNextPage(e: any) {
     if (this.pageIndex === 1 || this.pageIndex > 1) {
       this.nextPage = ++this.pageIndex;
@@ -78,11 +71,9 @@ export class AttendanceListComponent implements OnInit {
       });
     }
   }
-
   cancel(): void {
     this.nzMessageService.info('click cancel');
   }
-
   confirmDelete(attendanceId): void {
     this.attendanceService.deleteAttendance(attendanceId).subscribe(() => {
       console.log('Deleted!');

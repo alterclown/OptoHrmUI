@@ -6,8 +6,8 @@
         </ngx-spinner>
         <div class="table-operations">
             <button nz-button [routerLink]="['create']">Create Attendance</button>
-            <button nz-button>Sort age</button>
-            <button nz-button>Clear filters</button>
+            <input placeholder="small size" nzSize="small" type="text" autocomplete="off"/>
+            <button nz-button> Clear filters</button>
             <button nz-button>Clear filters and sorters</button>
         </div>
         <nz-table #editRowTable nzBordered [nzData]="['']" [nzShowPagination]="false">
@@ -44,9 +44,9 @@
                     </td>
                 </tr>
                 <div class="button-corner">
-                    <nz-tag [nzColor]="'purple'">Page {{pageIndex}} of {{totalPages}}</nz-tag>
                     <button nz-button nzType="primary" (click)="handlePreviousPage($event)"
                         [disabled]="pageIndex === 1"><i nz-icon nzType="arrow-left"></i></button>
+                        <nz-tag [nzColor]="'purple'">Page {{pageIndex}} of {{totalPages}}</nz-tag>
                     <button nz-button nzType="primary" (click)="handleNextPage($event)"
                         [disabled]="pageIndex === totalPages"><i nz-icon nzType="arrow-right"></i></button>
                 </div>

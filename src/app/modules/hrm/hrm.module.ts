@@ -124,6 +124,7 @@ import { UpdateMonitorAttendanceComponent } from './monitor-attendance/update-mo
 import { UpdateAttendanceComponent } from './attendance/update-attendance/update-attendance.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     EmployeeComponent,
@@ -252,6 +253,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HrmRoutingModule,
     CommonSharedModule,
     NgxSpinnerModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
