@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Authentication } from 'src/app/modules/shared-services/Authentication.service';
+import { ClientService } from '../../client/services/client.service';
 import { ProjectService } from '../services/project.service';
 
 @Component({
@@ -10,8 +11,10 @@ import { ProjectService } from '../services/project.service';
 })
 export class CreateProjectComponent implements OnInit {
   projectForm: FormGroup;
-  constructor(private fb: FormBuilder, private projectService: ProjectService) {
+  _clientList:any;
+  constructor(private fb: FormBuilder, private projectService: ProjectService,private clientService:ClientService) {
     this.submitProject();
+    this.getData();
   }
 
   ngOnInit(): void {
@@ -31,5 +34,9 @@ export class CreateProjectComponent implements OnInit {
       console.log(data);
     });
   }
-
+  getData(){
+    this.clientService.getClientData().subscribe( data =>{
+      this._clientList = data;
+    });
+  }
 }

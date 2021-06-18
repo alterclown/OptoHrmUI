@@ -9,7 +9,9 @@
     <nz-form-item>
         <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Client" nzRequired>Client</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="Client" id="Client" />
+            <nz-select formControlName="Client"  nzAllowClear nzPlaceHolder="Select Client">
+                <nz-option *ngFor="let client of _clientList" [nzLabel]="client.clientName" [nzValue]="client.clientName">{{client.clientName}}</nz-option>
+              </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
