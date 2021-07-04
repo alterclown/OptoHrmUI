@@ -1,9 +1,12 @@
 <nz-page-header-title> Employee Leave Rules</nz-page-header-title>
 <form nz-form [formGroup]="leaveRulesForm" (ngSubmit)="onSubmit()">
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeaveGroup" nzRequired>LeaveGroup</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Leave" nzRequired>Employee Leave Group Name</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="LeaveGroup" id="LeaveGroup" />
+            <nz-select formControlName="LeaveGroup" nzAllowClear nzPlaceHolder="Select Leave Group Name">
+                <nz-option *ngFor="let leave of leavList" [nzLabel]="leave.leaveName" [nzValue]="leave.leaveName">
+                    {{leave.leaveName}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
@@ -13,15 +16,21 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmploymentStatus" nzRequired>EmploymentStatus</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmploymentStatus" nzRequired>Employment Status Name</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="EmploymentStatus" id="EmploymentStatus" />
+            <nz-select formControlName="EmploymentStatus" nzAllowClear nzPlaceHolder="Select Employment Status Name">
+                <nz-option *ngFor="let status of statusList" [nzLabel]="status.employmentStatusName"
+                    [nzValue]="status.employmentStatusName">{{status.employmentStatusName}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>EmployeeName</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>Employee Name</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="EmployeeName" id="EmployeeName" />
+            <nz-select formControlName="EmployeeName" nzAllowClear nzPlaceHolder="Select Employee Name">
+                <nz-option *ngFor="let emp of employeeList" [nzLabel]="emp.firstName" [nzValue]="emp.firstName">
+                    {{emp.firstName}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>

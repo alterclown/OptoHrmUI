@@ -12,8 +12,8 @@ import { EmployeeProjectService } from '../services/employee-project.service';
 })
 export class CreateEmployeeProjectComponent implements OnInit {
   projectForm: FormGroup;
-  _projectList:any;
-  constructor(private fb: FormBuilder, private projectService: EmployeeProjectService,private loadProject:ProjectService) {
+  _projectList: any;
+  constructor(private fb: FormBuilder, private projectService: EmployeeProjectService, private loadProject: ProjectService) {
     this.submitProject();
     this.getData();
   }
@@ -21,25 +21,25 @@ export class CreateEmployeeProjectComponent implements OnInit {
   ngOnInit(): void {
     this.submitProject();
   }
-  submitProject(){
+  submitProject() {
     this.projectForm = this.fb.group({
-    EmployeeProjectName:[''],
-    EmployeeName:[''],
-    Details:[''],
-    EmployeeId:[''],
-    CompanyId:Authentication.getCompanyIdFromLocalStorage(),
-    UserId:Authentication.getUserIdFromLocalStorage()
+      EmployeeProjectName: [''],
+      EmployeeName: [''],
+      Details: [''],
+      EmployeeId: [''],
+      CompanyId: Authentication.getCompanyIdFromLocalStorage(),
+      UserId: Authentication.getUserIdFromLocalStorage()
     });
   }
-  onSubmit(){
-    this.projectService.postEmployeeProject(this.projectForm.value).subscribe(data =>{
+  onSubmit() {
+    this.projectService.postEmployeeProject(this.projectForm.value).subscribe(data => {
       console.log(data);
     });
- }
- getData(){
-  this.loadProject.getProject().subscribe( data =>{
-    this._projectList = data;
-  });
-}
+  }
+  getData() {
+    this.loadProject.getProject().subscribe(data => {
+      this._projectList = data;
+    });
+  }
 
 }
