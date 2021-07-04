@@ -20,7 +20,6 @@ export class PaidTimeOffListComponent implements OnInit {
   getData() {
     this.spinner.show();
     this.paidTimeOffService.getPaidTimeOff().subscribe(data => {
-      debugger
       this._paidTimeList = data;
       this.spinner.hide();
     });

@@ -1,21 +1,31 @@
 <nz-page-header-title>Paid Time Off</nz-page-header-title>
 <form nz-form [formGroup]="paidTimeForm" (ngSubmit)="onSubmit()">
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeaveType" nzRequired>LeaveType</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Leave Type" nzRequired>Leave Type</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="LeaveType" id="LeaveType" />
+            <nz-select formControlName="LeaveType" nzAllowClear nzPlaceHolder="Select Leave Type Name">
+                <nz-option *ngFor="let leave of leaveTypeList" [nzLabel]="leave.leaveName" [nzValue]="leave.leaveName">
+                    {{leave.leaveName}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>EmployeeName</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Employee Name" nzRequired>Employee Name</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="EmployeeName" id="EmployeeName" />
+            <nz-select formControlName="EmployeeName" nzAllowClear nzPlaceHolder="Select Employee Name">
+                <nz-option *ngFor="let emp of employeeList" [nzLabel]="emp.firstName" [nzValue]="emp.firstName">
+                    {{emp.firstName}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="LeavePeriod" nzRequired>Leave Period</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Leave Period" nzRequired>Leave Period</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <nz-date-picker nz-input type="text" formControlName="LeavePeriod" id="LeavePeriod"></nz-date-picker>
+            <nz-select formControlName="LeavePeriod" nzAllowClear nzPlaceHolder="Select Leave Period">
+                <nz-option *ngFor="let leave of leavePeriodList" [nzLabel]="leave.periodStartDate"
+                    [nzValue]="leave.periodStartDate">
+                    {{leave.periodStartDate}}</nz-option>
+            </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
