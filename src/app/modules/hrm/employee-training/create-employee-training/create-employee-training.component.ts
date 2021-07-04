@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NzFormTooltipIcon } from 'ng-zorro-antd/form';
 import { Authentication } from 'src/app/modules/shared-services/Authentication.service';
+import { TrainingSetupService } from '../../training-setup/services/training-setup.service';
 import { EmployeeTrainingService } from '../employee-training-services/employee-training.service';
 
 @Component({
@@ -10,11 +11,12 @@ import { EmployeeTrainingService } from '../employee-training-services/employee-
   styleUrls: ['./create-employee-training.component.scss']
 })
 export class CreateEmployeeTrainingComponent implements OnInit {
-
+  _trainingList:any;
   trainingForm: FormGroup;
   
-  constructor(private fb: FormBuilder,private trainingService:EmployeeTrainingService) {
+  constructor(private fb: FormBuilder,private trainingService:EmployeeTrainingService,private trainingSetupService: TrainingSetupService) {
     this.submitEmployee();
+    this.getData();
   }
 
   ngOnInit(): void {
@@ -39,5 +41,10 @@ export class CreateEmployeeTrainingComponent implements OnInit {
       console.log(data);
       //this._router.navigate(['company']);
     })
+  }
+  getData(){
+    this.trainingSetupService.getTrainingSetup().subscribe( data =>{
+      this._trainingList = data;
+    });
   }
 }

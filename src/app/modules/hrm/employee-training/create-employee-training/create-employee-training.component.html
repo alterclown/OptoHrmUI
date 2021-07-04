@@ -19,11 +19,13 @@
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ProjectName" nzRequired>Project Name</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" >
-        <input nz-input type="text" formControlName="ProjectName" id="ProjectName"/>
-      </nz-form-control>
-    </nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Client" nzRequired>Project Name</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+        <nz-select formControlName="ProjectName"  nzAllowClear nzPlaceHolder="Select Project Name">
+          <nz-option *ngFor="let train of _trainingList" [nzLabel]="train.trainingName" [nzValue]="train.trainingName">{{train.trainingName}}</nz-option>
+          </nz-select>
+    </nz-form-control>
+</nz-form-item>
     <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="TrainingLocation" nzRequired>Training Location</nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24" >

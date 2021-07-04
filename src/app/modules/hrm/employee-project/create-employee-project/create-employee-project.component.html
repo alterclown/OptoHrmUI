@@ -1,11 +1,13 @@
 <nz-page-header-title>Project</nz-page-header-title>
 <form nz-form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
     <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeProjectName" nzRequired>Employee Project Name</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24" >
-        <input nz-input type="text" formControlName="EmployeeProjectName" id="EmployeeProjectName" />
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="Project" nzRequired>Employee Project Name</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-select formControlName="EmployeeProjectName"  nzAllowClear nzPlaceHolder="Select Project Name">
+            <nz-option *ngFor="let project of _projectList" [nzLabel]="project.projectName" [nzValue]="project.projectName">{{project.projectName}}</nz-option>
+            </nz-select>
       </nz-form-control>
-    </nz-form-item>
+  </nz-form-item>
     <nz-form-item>
       <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeName" nzRequired>EmployeeName</nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24" >
