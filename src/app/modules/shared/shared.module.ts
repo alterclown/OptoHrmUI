@@ -80,6 +80,7 @@ import { UpdateOverTimeComponent } from './over-time/update-over-time/update-ove
 import { OverTimeListComponent } from './over-time/over-time-list/over-time-list.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PaygradeListComponent } from './paygrade/paygrade-list/paygrade-list.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 
 @NgModule({
@@ -165,6 +166,7 @@ import { PaygradeListComponent } from './paygrade/paygrade-list/paygrade-list.co
     ReactiveFormsModule,
     NzFormModule,
     CommonSharedModule,
+    NzInputModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
@@ -173,6 +175,10 @@ import { PaygradeListComponent } from './paygrade/paygrade-list/paygrade-list.co
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     })
+  ],
+
+  exports: [
+    NzInputModule
   ]
 })
 export class SharedModule { }

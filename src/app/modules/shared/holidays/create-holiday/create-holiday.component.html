@@ -25,15 +25,31 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Employee Id</nz-form-label>
+        <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Employee Id</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="EmployeeId" id="EmployeeId" />
+            <input nz-input type="dropdown" formControlName="EmployeeId" id="EmployeeId" />
+        </nz-form-control> -->
+
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="EmployeeId" nzRequired>Employee</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-select formControlName="EmployeeId" id="EmployeeId">
+                <nz-option [nzLabel]="'Between'" [nzValue]="-1"></nz-option>
+                <nz-option *ngFor="let item of _employeeList" [nzLabel]="item.firstName + ' ' + item.lastName" [nzValue]="item.employeeId" ></nz-option>
+              </nz-select>
         </nz-form-control>
+        
+        <nz-input-group nzCompact>
+            
+          </nz-input-group>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="WorkWeekId" nzRequired>WorkWeek Id</nz-form-label>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="WorkWeekId" nzRequired>WorkWeek</nz-form-label>
         <nz-form-control [nzSm]="14" [nzXs]="24">
-            <input nz-input type="text" formControlName="WorkWeekId" id="WorkWeekId" />
+            <nz-select formControlName="WorkWeekId" id="WorkWeekId">
+                <nz-option [nzLabel]="'Between'" [nzValue]="-1"></nz-option>
+                <nz-option *ngFor="let item of _workWeekList" [nzLabel]="item.status" [nzValue]="item.workWeekId" ></nz-option>
+              </nz-select>
+
         </nz-form-control>
     </nz-form-item>
     <nz-form-item nz-row class="register-area">
